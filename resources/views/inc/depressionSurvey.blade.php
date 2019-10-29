@@ -25,17 +25,17 @@
             "title": "Depression Questionnaire",
             "description": "Over the last 2 weeks, how often have you been bothered by any of the following problem?\n\n",
             "completedHtmlOnCondition": [{
-                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}<=4",
-                "html": "<h1>Minimal Anxiety<h1>"
+                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}<=4",
+                "html": "<h1>Minimal Depression<h1>"
             }, {}, {
-                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}<=9 and ({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}>=5",
-                "html": "Mild Anxiety"
+                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}<=9 and ({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}>=5",
+                "html": "<h1>Mild Depression</h1>"
             }, {
-                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}<=14 and ({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}>=10",
-                "html": "Moderate Anxiety"
+                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}<=14 and ({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}>=10",
+                "html": "<h1>Moderate Depression</h1>"
             }, {
-                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}>=15",
-                "html": "Severe Anxiety"
+                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}>=15",
+                "html": "<h1>Severe Depression</h1>"
             }],
             "pages": [{
                 "name": "page1",

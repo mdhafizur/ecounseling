@@ -25,6 +25,7 @@
         var botmanWidget = {
             title: 'E-Counseling',
             aboutText: 'C Hafizur',
+            bubbleBackground: 'grey',
 
 
             introMessage: "✋ Hi ! I'm form E-Counseling"

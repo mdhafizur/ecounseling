@@ -3,7 +3,7 @@
 <h3>Student</h3>
 
 
-
+<h1>Psychological Assessment</h1>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#anxietyModal">
     Anxiety Assessment
