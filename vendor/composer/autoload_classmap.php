@@ -34,6 +34,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
+    'App\\admin' => $baseDir . '/app/admin.php',
     'BotMan\\BotMan\\BotMan' => $vendorDir . '/botman/botman/src/BotMan.php',
     'BotMan\\BotMan\\BotManFactory' => $vendorDir . '/botman/botman/src/BotManFactory.php',
     'BotMan\\BotMan\\BotManServiceProvider' => $vendorDir . '/botman/botman/src/BotManServiceProvider.php',

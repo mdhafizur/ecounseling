@@ -508,6 +508,7 @@ class ComposerStaticInit3697ca7aa6cc23329f88db8dffb8e4df
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\admin' => __DIR__ . '/../..' . '/app/admin.php',
         'BotMan\\BotMan\\BotMan' => __DIR__ . '/..' . '/botman/botman/src/BotMan.php',
         'BotMan\\BotMan\\BotManFactory' => __DIR__ . '/..' . '/botman/botman/src/BotManFactory.php',
         'BotMan\\BotMan\\BotManServiceProvider' => __DIR__ . '/..' . '/botman/botman/src/BotManServiceProvider.php',

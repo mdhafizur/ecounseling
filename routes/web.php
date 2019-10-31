@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', function () {
     return view('home');
 });
@@ -21,9 +21,7 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/admin', function () {
-    return view('admin');
-});
+
 Route::get('/student', function () {
     return view('student');
 });
@@ -34,3 +32,17 @@ Route::get('/messages', 'MessagesController@getMessages');
 Route::post('/contact/submit', 'MessagesController@submit');
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+
+
+
+Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm')->name('login.admin');
+
+
+Route::post('/login/admin', 'Auth\LoginController@adminLogin');
+
+
+
+
+Route::group(['middleware' => 'auth:admin'], function () {
+    Route::view('/admin', 'admin');
+});

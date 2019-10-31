@@ -1,237 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://unpkg.com/jquery"></script>
-    <script src="https://surveyjs.azureedge.net/1.1.8/survey.jquery.js"></script>
-    <link href="https://surveyjs.azureedge.net/1.1.8/survey.css" type="text/css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Your platform (jquery) scripts. -->
-    <div id="surveyElement"></div>
-    <div id="surveyResult"></div>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
 
-    <script>
-        var json = {
-            "title": "Depression Questionnaire",
-            "description": "Over the last 2 weeks, how often have you been bothered by any of the following problem?\n\n",
-            "completedHtmlOnCondition": [{
-                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}<=4",
-                "html": "<h1>Minimal Anxiety<h1>"
-            }, {}, {
-                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}<=9 and ({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}>=5",
-                "html": "Mild Anxiety"
-            }, {
-                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}<=14 and ({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}>=10",
-                "html": "Moderate Anxiety"
-            }, {
-                "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}>=15",
-                "html": "Severe Anxiety"
-            }],
-            "pages": [{
-                "name": "page1",
-                "elements": [{
-                    "type": "rating",
-                    "name": "question1",
-                    "title": "Little interest or pleasure in doing things",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
-                }, {
-                    "type": "rating",
-                    "name": "question2",
-                    "title": "Feeling down, depressed or hopeless",
-                    "isRequired": true,
-                    "rateValues": [{
-                            "value": "0",
-                            "text": "Not at all"
-                        }, {
-                            "value": "1",
-                            "text": "Several Days"
-                        },
-                        {
-                            "value": "2",
-                            "text": "More than half the days"
-                        }, {
-                            "value": "3",
-                            "text": "Nearly every day"
-                        }
-                    ],
-                    "rateMax": 3
-                }, {
-                    "type": "rating",
-                    "name": "question3",
-                    "title": "Trouble falling or staying asleep or sleeping too much",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
-                }, {
-                    "type": "rating",
-                    "name": "question4",
-                    "title": "Feeling tired or having little energy",
-                    "isRequired": true,
-                    "rateValues": [{
-                            "value": "0",
-                            "text": "Not at all"
-                        }, {
-                            "value": "1",
-                            "text": "Several Days"
-                        },
-                        {
-                            "value": "2",
-                            "text": "More than half the days"
-                        }, {
-                            "value": "3",
-                            "text": "Nearly every day"
-                        }
-                    ],
-                    "rateMax": 3
-                }, {
-                    "type": "rating",
-                    "name": "question5",
-                    "title": "Poor appetite or overeating",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
-                }, {
-                    "type": "rating",
-                    "name": "question6",
-                    "title": "Feeling bad about yourself or that you are a failure or have let yourself or your family down",
-                    "isRequired": true,
-                    "rateValues": [{
-                            "value": "0",
-                            "text": "Not at all"
-                        }, {
-                            "value": "1",
-                            "text": "Several Days"
-                        },
-                        {
-                            "value": "2",
-                            "text": "More than half the days"
-                        }, {
-                            "value": "3",
-                            "text": "Nearly every day"
-                        }
-                    ],
-                    "rateMax": 3
-                }, {
-                    "type": "rating",
-                    "name": "question7",
-                    "title": "Trouble concentrating on things, such as reading the newspaper or watching the television",
-                    "isRequired": true,
-                    "rateValues": [{
-                            "value": "0",
-                            "text": "Not at all"
-                        }, {
-                            "value": "1",
-                            "text": "Several Days"
-                        },
-                        {
-                            "value": "2",
-                            "text": "More than half the days"
-                        }, {
-                            "value": "3",
-                            "text": "Nearly every day"
-                        }
-                    ],
-                    "rateMax": 3
-                }, {
-                    "type": "rating",
-                    "name": "question8",
-                    "title": "Moving or speaking so slowly that other people could have noticed?  Or the opposite - being so fidgery or restless that you have been moving around a lot more than usual",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
-                }, {
-                    "type": "rating",
-                    "name": "question9",
-                    "title": "Thoughts that you would be better off dead of or hurting yourself in some way",
-                    "isRequired": true,
-                    "rateValues": [{
-                            "value": "0",
-                            "text": "Not at all"
-                        }, {
-                            "value": "1",
-                            "text": "Several Days"
-                        },
-                        {
-                            "value": "2",
-                            "text": "More than half the days"
-                        }, {
-                            "value": "3",
-                            "text": "Nearly every day"
-                        }
-                    ],
-                    "rateMax": 3
-                }]
-            }]
-        };
+                    </ul>
 
-        window.survey = new Survey.Model(json);
-        survey.onComplete.add(function (result) {
-            document.querySelector('#surveyResult').textContent = "Result JSON:\n" + JSON.stringify(result.data,
-                null, 3);
-        });
-        $("#surveyElement").Survey({
-            model: survey
-        });
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Hi There <span class="caret"></span>
+                            </a>
 
-    </script>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
 
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -6,6 +6,17 @@
          <span class="navbar-toggler-icon"></span>
      </button>
 
+
+     @if( auth()->check() )
+     <li class="nav-item">
+         <a class="nav-link font-weight-bold" href="#">Hi {{ auth()->user()->name }}</a>
+     </li>
+     <li class="nav-item">
+         <a class="nav-link" href="/logout">Log Out</a>
+     </li>
+     @else
+
+
      <div class="collapse navbar-collapse" id="navbarsExample03">
          <ul class="navbar-nav mr-auto">
              <li class="nav-item active">
@@ -46,7 +57,7 @@
 
      </div>
  </nav>
-
+ @endif
 
 
 
