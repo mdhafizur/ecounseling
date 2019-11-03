@@ -1,4 +1,4 @@
-@include('layouts.app')
+@extends('layouts.auth')
 
 <h3>Student</h3>
 

@@ -22,9 +22,6 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/student', function () {
-    return view('student');
-});
 
 
 Route::get('/messages', 'MessagesController@getMessages');
@@ -45,4 +42,18 @@ Route::post('/login/admin', 'Auth\LoginController@adminLogin');
 
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::view('/admin', 'admin');
+});
+
+
+Route::get('/register/student', 'Auth\RegisterController@showStudentRegisterForm');
+Route::post('/register/student', 'Auth\RegisterController@createStudent');
+
+
+Route::get('/login/student', 'Auth\LoginController@showStudentLoginForm')->name('login.student');
+Route::post('/login/student', 'Auth\LoginController@studentLogin');
+
+Route::get('/register/counselor', 'Auth\RegisterController@showCounselorRegisterForm');
+
+Route::group(['middleware' => 'auth:student'], function () {
+    Route::view('/student', 'student');
 });

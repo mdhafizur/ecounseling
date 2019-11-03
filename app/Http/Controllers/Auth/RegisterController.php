@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Admin;
-use App\Writer;
+use App\student;
+use App\counselor;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -41,6 +42,8 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('guest:admin');
+        $this->middleware('guest:student');
     }
 
     /**
@@ -71,5 +74,51 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+
+    //student register
+    public function showStudentRegisterForm()
+    {
+        return view('auth.studentRegister', ['url' => 'student']);
+    }
+
+    protected function createStudent(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        student::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+            'matric' => $request['matric'],
+            'faculty' => $request['faculty'],
+            'department' => $request['department'],
+            'year' => $request['year'],
+            'nationality' => $request['nationality'],
+            'contact' => $request['contact'],
+        ]);
+        return redirect()->intended('login/student');
+    }
+
+
+
+    //counselor register
+
+    public function showCounselorRegisterForm()
+    {
+        return view('auth.studentRegister', ['url' => 'counselor']);
+    }
+
+    protected function createCounselor(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        counselor::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+
+            'contact' => $request['contact'],
+        ]);
+        return redirect()->intended('login/student');
     }
 }

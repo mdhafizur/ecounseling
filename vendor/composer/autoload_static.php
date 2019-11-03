@@ -481,7 +481,6 @@ class ComposerStaticInit3697ca7aa6cc23329f88db8dffb8e4df
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Conversations\\ExampleConversation' => __DIR__ . '/../..' . '/app/Conversations/ExampleConversation.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -509,6 +508,8 @@ class ComposerStaticInit3697ca7aa6cc23329f88db8dffb8e4df
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\admin' => __DIR__ . '/../..' . '/app/admin.php',
+        'App\\counselor' => __DIR__ . '/../..' . '/app/counselor.php',
+        'App\\student' => __DIR__ . '/../..' . '/app/student.php',
         'BotMan\\BotMan\\BotMan' => __DIR__ . '/..' . '/botman/botman/src/BotMan.php',
         'BotMan\\BotMan\\BotManFactory' => __DIR__ . '/..' . '/botman/botman/src/BotManFactory.php',
         'BotMan\\BotMan\\BotManServiceProvider' => __DIR__ . '/..' . '/botman/botman/src/BotManServiceProvider.php',

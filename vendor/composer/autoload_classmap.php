@@ -7,7 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
-    'App\\Conversations\\ExampleConversation' => $baseDir . '/app/Conversations/ExampleConversation.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -35,6 +34,8 @@ return array(
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\admin' => $baseDir . '/app/admin.php',
+    'App\\counselor' => $baseDir . '/app/counselor.php',
+    'App\\student' => $baseDir . '/app/student.php',
     'BotMan\\BotMan\\BotMan' => $vendorDir . '/botman/botman/src/BotMan.php',
     'BotMan\\BotMan\\BotManFactory' => $vendorDir . '/botman/botman/src/BotManFactory.php',
     'BotMan\\BotMan\\BotManServiceProvider' => $vendorDir . '/botman/botman/src/BotManServiceProvider.php',

@@ -44,7 +44,7 @@ class OnboardingConversation extends Conversation
 
     public function askMobile()
     {
-        $this->ask('Great. What is your mobile?', function (Answer $answer) {
+        $this->ask('Great. What is your mobile number?', function (Answer $answer) {
             $this->bot->userStorage()->save([
                 'mobile' => $answer->getText(),
             ]);
