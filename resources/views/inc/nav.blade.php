@@ -33,8 +33,8 @@
                  <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
                      aria-haspopup="true" aria-expanded="false">Counselors</a>
                  <div class="dropdown-menu" aria-labelledby="dropdown03">
-                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalCRegisterForm">Sign Up</a>
-                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalLoginForm">Log In</a>
+                     <a class="dropdown-item" href="/register/counselor">Sign Up</a>
+                     <a class="dropdown-item" href="/login/counselor">Log In</a>
 
                  </div>
              </li>

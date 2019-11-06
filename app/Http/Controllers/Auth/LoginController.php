@@ -85,4 +85,26 @@ class LoginController extends Controller
         }
         return back()->withInput($request->only('email', 'remember'));
     }
+
+
+
+    //student
+    public function showCounselorLoginForm()
+    {
+        return view('auth.login', ['url' => 'counselor']);
+    }
+
+    public function counselorLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if (Auth::guard('counselor')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+
+            return redirect()->intended('/counselor');
+        }
+        return back()->withInput($request->only('email', 'remember'));
+    }
 }

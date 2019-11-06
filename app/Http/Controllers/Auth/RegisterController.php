@@ -106,7 +106,7 @@ class RegisterController extends Controller
 
     public function showCounselorRegisterForm()
     {
-        return view('auth.studentRegister', ['url' => 'counselor']);
+        return view('auth.counselorRegister', ['url' => 'counselor']);
     }
 
     protected function createCounselor(Request $request)
@@ -116,9 +116,9 @@ class RegisterController extends Controller
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
-
             'contact' => $request['contact'],
+
         ]);
-        return redirect()->intended('login/student');
+        return redirect()->intended('login/counselor');
     }
 }

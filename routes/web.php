@@ -21,10 +21,14 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/app', function () {
+    return view('appointment');
+});
 
 
 
-Route::get('/messages', 'MessagesController@getMessages');
+
+
 
 Route::post('/contact/submit', 'MessagesController@submit');
 
@@ -42,6 +46,7 @@ Route::post('/login/admin', 'Auth\LoginController@adminLogin');
 
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::view('/admin', 'admin');
+    Route::get('/messages', 'MessagesController@getMessages');
 });
 
 
@@ -52,8 +57,23 @@ Route::post('/register/student', 'Auth\RegisterController@createStudent');
 Route::get('/login/student', 'Auth\LoginController@showStudentLoginForm')->name('login.student');
 Route::post('/login/student', 'Auth\LoginController@studentLogin');
 
-Route::get('/register/counselor', 'Auth\RegisterController@showCounselorRegisterForm');
-
 Route::group(['middleware' => 'auth:student'], function () {
     Route::view('/student', 'student');
+    Route::get('student/profile', ['uses' => 'ProfilesController@indexStudent', 'as' => 'student.profile']);
+    Route::post('student/profile/update', ['uses' => 'ProfilesController@updateStudent', 'as' => 'student.profile.update']);
+});
+
+
+
+Route::get('/register/counselor', 'Auth\RegisterController@showCounselorRegisterForm');
+Route::post('/register/counselor', 'Auth\RegisterController@createCounselor');
+
+Route::get('/login/counselor', 'Auth\LoginController@showCounselorLoginForm')->name('login.counselor');
+Route::post('/login/counselor', 'Auth\LoginController@counselorLogin');
+
+
+Route::group(['middleware' => 'auth:counselor'], function () {
+    Route::view('/counselor', 'counselor');
+    Route::get('counselor/profile', ['uses' => 'ProfilesController@indexCounselor', 'as' => 'counselor.profile']);
+    Route::post('counselor/profile/update', ['uses' => 'ProfilesController@updateCounselor', 'as' => 'counselor.profile.update']);
 });

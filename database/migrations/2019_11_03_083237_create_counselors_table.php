@@ -14,7 +14,15 @@ class CreateCounselorsTable extends Migration
     public function up()
     {
         Schema::create('counselors', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->integer('contact')->nullable();
+
+
+
+            $table->rememberToken();
             $table->timestamps();
         });
     }
