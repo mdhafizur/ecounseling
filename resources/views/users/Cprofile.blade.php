@@ -1,22 +1,12 @@
 @extends('layouts.auth')
 
 @section('content')
-
+@include('inc.profileUpdate')
 <div class="container">
-    @include('inc.profileUpdate')
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="row justify-content-center">
-
-                <div class="profile-header-container">
-                    <div class="profile-header-img">
-                        <img class="rounded-circle" src="/storage/avatars/{{ $user->avatar }}" />
-                        <!-- badge -->
-                        <div class="rank-label-container">
-                            <span class="label label-default rank-label">{{$user->name}}</span>
-                        </div>
-                    </div>
-                </div>
 
 
 
@@ -28,10 +18,18 @@
 
 
                     <form method="POST" action="{{ route('counselor.profile.update') }}"
-                        aria-label="{{ __('Edit Profile') }}">
+                        aria-label="{{ __('Edit Profile') }}" enctype="multipart/form-data">
 
                         @csrf
+                        <div class="col-md-10 col-md-offset-1">
+                            <img src="/uploads/avatars/{{ $user->avatar }}" style="width:150px; height:150px">
+                            <h2>{{$user->name}}'s Profile</h2>
+                            <!-- <form enctype="multipart/form-data" action="/counselor/profile" ></form> -->
+                            <label> Update Profile Image</label>
+                            <input id="avatar" type="file" name="avatar">
 
+
+                        </div>
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -91,13 +89,42 @@
                                     name="password_confirmation">
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="contact"
+                                class="col-md-4 col-form-label text-md-right">{{ __('Contact No') }}</label>
 
-                        <div class="form-group">
-                            <input type="file" class="form-control-file" name="avatar" id="avatarFile"
-                                aria-describedby="fileHelp">
-                            <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of
-                                image should not be more than 2MB.</small>
+                            <div class="col-md-6">
+                                <input id="contact" type="number"
+                                    class="form-control{{ $errors->has('contact') ? ' is-invalid' : '' }}"
+                                    name="contact" value="{{ old('contact', $user->contact) }}">
+
+                                @if ($errors->has('contact'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('contact') }}</strong>
+                                </span>
+                                @endif
+                            </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="description"
+                                class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea id="description" type="textarea"
+                                    class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}"
+                                    name="description" value="{{ old('description', $user->description) }}" required
+                                    autofocus>
+                                </textarea>
+
+                                @if ($errors->has('description'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('description') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+
 
 
 

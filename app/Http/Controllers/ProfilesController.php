@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
-
+use Image;
 
 class ProfilesController extends Controller
 {
@@ -95,6 +95,7 @@ class ProfilesController extends Controller
             $user->password = bcrypt($request->password);
         }
 
+
         Session::flash('success', 'Account profile updated.');
 
         return redirect('/student/profile');
@@ -108,14 +109,25 @@ class ProfilesController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->contact = $request->contact;
+        $user->description = $request->description;
 
 
-        $user->save();
 
 
-        if ($request->has('password')) {
-            $user->password = bcrypt($request->password);
+
+
+
+        if ($request->hasfile('avatar')) {
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(public_path('/uploads/avatars/' . $filename));
+
+            $user = Auth::user();
+            $user->avatar = $filename;
+            $user->save();
         }
+        $user->save();
 
         Session::flash('success', 'Account profile updated.');
 

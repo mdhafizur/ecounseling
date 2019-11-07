@@ -46,7 +46,10 @@
                          <!-- Authentication Links -->
                          <li class="nav-item dropdown">
                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre
+                                 style="position:relative; padding-left:50px">
+                                 <img src="/uploads/avatars/{{Auth::user()->avatar}}"
+                                     style="width: 32px; height: 32px; position:absolute; top:1x; left: 10px; border-radius:50%">
                                  {{ Auth::user()->name }} <span class="caret"></span>
                              </a>
 
@@ -82,6 +85,7 @@
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
      </script>
+     <!-- <img src='/files/bg.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'> -->
  </body>
 
  </html>

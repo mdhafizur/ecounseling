@@ -33,9 +33,9 @@
         };
 
     </script>
-    <iframe allow="microphone;" width="350" height="430"
+    <!-- <iframe allow="microphone;" width="350" height="430"
         src="https://console.dialogflow.com/api-client/demo/embedded/f83e1873-5ca4-437c-8e15-ab873bd2c7fc">
-    </iframe>
+    </iframe> -->
 
 
 
@@ -85,6 +85,7 @@
     </script>
 
 
+    <img src='/files/bg.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
 
 </body>
 
