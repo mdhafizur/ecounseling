@@ -85,7 +85,7 @@
     </script>
 
 
-    <img src='/files/bg.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
+    <!-- <img src='/files/bg.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'> -->
 
 </body>
 

@@ -116,7 +116,8 @@ class RegisterController extends Controller
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
-            'contact' => $request['contact'],
+            'type' => implode(",", $request['type']),
+
 
         ]);
         return redirect()->intended('login/counselor');

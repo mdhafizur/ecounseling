@@ -5,7 +5,8 @@
 @foreach ($viewCprofile as $cprofile)
 <ul class="list-group">
     <div class="col-md-10 col-md-offset-1">
-        <img src="/uploads/avatars/{{ $cprofile->avatar }}" style="width:150px; height:150px">
+        <img src="/uploads/avatars/{{ $cprofile->avatar }}"
+            style="width:150px; height:150px; float:left;border-radius: 50%;margin-right: 25px;">
         <h2>{{$cprofile->name}}'s Profile</h2>
 
 
@@ -13,6 +14,7 @@
     </div>
     <li class="list-group-item">Name: {{$cprofile->name}}</li>
     <li class="list-group-item">Email: {{$cprofile->email}}</li>
+
 
 </ul>
 @endforeach

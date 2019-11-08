@@ -14,7 +14,7 @@ class counselor extends  Authenticatable
     protected $guard = 'counselor';
 
     protected $fillable = [
-        'name', 'email', 'password', 'contact', 'resume,'
+        'name', 'email', 'password', 'type', 'resume',
     ];
 
     protected $hidden = [

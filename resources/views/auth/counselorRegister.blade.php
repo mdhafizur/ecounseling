@@ -12,7 +12,8 @@
                     @isset($url)
                     <form method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
                         @else
-                        <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                        <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}"
+                            enctype="multipart/form-data">
                             @endisset
                             @csrf
 
@@ -75,6 +76,25 @@
                                         name="password_confirmation" required>
                                 </div>
                             </div>
+
+
+                            <div class="form-group row">
+                                <label for="type"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Counselor Type') }}</label>
+
+                                <div class="col-md-6">
+
+                                    <input type="checkbox" id="type" name="type[]" value="Session Counseling">Session
+                                    Counseling<br>
+                                    <input type="checkbox" id="type" name="type[]" value="Career Counseling">Career
+                                    Counseling<br>
+                                    <input type="checkbox" id="type" name="type[]" value="Online Counseling">Online
+                                    Counseling<br>
+                                    <input type="checkbox" id="type" name="type[]" value="Psychotherapy">Psychotherapy
+                                    <br>
+                                </div>
+                            </div>
+
 
 
 
