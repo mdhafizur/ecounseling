@@ -77,3 +77,4 @@ Route::group(['middleware' => 'auth:counselor'], function () {
     Route::get('counselor/profile', ['uses' => 'ProfilesController@indexCounselor', 'as' => 'counselor.profile']);
     Route::post('counselor/profile/update', ['uses' => 'ProfilesController@updateCounselor', 'as' => 'counselor.profile.update']);
 });
+Route::get('/viewCprofile', 'ProfilesController@getCprofiles');

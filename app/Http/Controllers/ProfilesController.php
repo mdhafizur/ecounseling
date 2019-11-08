@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\counselor;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -116,7 +117,9 @@ class ProfilesController extends Controller
 
 
 
-
+        if ($request->has('password')) {
+            $user->password = bcrypt($request->password);
+        }
 
         if ($request->hasfile('avatar')) {
             $avatar = $request->file('avatar');
@@ -143,5 +146,11 @@ class ProfilesController extends Controller
     public function destroy($id)
     {
         //
+    }
+    //view messages
+    public function getCprofiles()
+    {
+        $cprofiles = counselor::all();
+        return view('viewCprofile')->with('viewCprofile', $cprofiles);
     }
 }
