@@ -14,6 +14,7 @@
     </div>
     <li class="list-group-item">Name: {{$cprofile->name}}</li>
     <li class="list-group-item">Email: {{$cprofile->email}}</li>
+    <li class="list-group-item">Counselor Type: {{$cprofile->type}}</li>
 
 
 </ul>

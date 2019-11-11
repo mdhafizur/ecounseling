@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Session;
 
 class RegisterController extends Controller
 {
@@ -97,6 +98,7 @@ class RegisterController extends Controller
             'nationality' => $request['nationality'],
             'contact' => $request['contact'],
         ]);
+        Session::flash('success', 'Sign Up Successful');
         return redirect()->intended('login/student');
     }
 
@@ -120,6 +122,7 @@ class RegisterController extends Controller
 
 
         ]);
+        Session::flash('success', 'Sign Up Successful');
         return redirect()->intended('login/counselor');
     }
 }

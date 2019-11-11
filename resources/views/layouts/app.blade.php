@@ -73,12 +73,12 @@
 
     <script type="text/javascript">
         $(function () {
-            $('#datetimepicker3').datetimepicker({
-                format: 'LT'
-            });
-            $('.datepicker').datepicker({
-                format: 'mm/dd/yyyy',
-                startDate: '-3d'
+            $('#datetimepicker1').datetimepicker({
+                daysOfWeekDisabled: [0, 6],
+                format: 'YYYY-MM-DD HH:mm:ss'
+
+
+
             });
         });
 

@@ -21,9 +21,7 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/app', function () {
-    return view('appointment');
-});
+
 
 
 
@@ -61,6 +59,8 @@ Route::group(['middleware' => 'auth:student'], function () {
     Route::view('/student', 'student');
     Route::get('student/profile', ['uses' => 'ProfilesController@indexStudent', 'as' => 'student.profile']);
     Route::post('student/profile/update', ['uses' => 'ProfilesController@updateStudent', 'as' => 'student.profile.update']);
+    Route::resource('appointments', 'AppointmentsController');
+    Route::get('/createAppointment', 'AppointmentsController@create');
 });
 
 
