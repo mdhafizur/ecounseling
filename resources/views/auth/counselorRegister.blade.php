@@ -10,7 +10,8 @@
 
                 <div class="card-body">
                     @isset($url)
-                    <form method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
+                    <form method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}"
+                        enctype="multipart/form-data">
                         @else
                         <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}"
                             enctype="multipart/form-data">
@@ -96,7 +97,14 @@
                             </div>
 
 
+                            <div class="form-group row">
+                                <label for="resume"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Upload Resume') }}</label>
 
+                                <div class="col-md-6">
+                                    <input id="resume" type="file" class="form-control" name="resume">
+                                </div>
+                            </div>
 
 
 

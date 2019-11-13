@@ -78,3 +78,6 @@ Route::group(['middleware' => 'auth:counselor'], function () {
     Route::post('counselor/profile/update', ['uses' => 'ProfilesController@updateCounselor', 'as' => 'counselor.profile.update']);
 });
 Route::get('/viewCprofile', 'ProfilesController@getCprofiles');
+
+Route::get('/approval', 'ProfilesController@index');
+Route::get('status/{id}', 'ProfilesController@status')->name('status');

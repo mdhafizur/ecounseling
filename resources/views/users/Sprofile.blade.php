@@ -16,6 +16,15 @@
                         aria-label="{{ __('Edit Profile') }}">
 
                         @csrf
+                        <div class="col-md-10 col-md-offset-1">
+                            <img src="/uploads/avatars/{{ $user->avatar }}" style="width:150px; height:150px">
+                            <h2>{{$user->name}}'s Profile</h2>
+                            <!-- <form enctype="multipart/form-data" action="/counselor/profile" ></form> -->
+                            <label> Update Profile Image</label>
+                            <input id="avatar" type="file" name="avatar">
+
+
+                        </div>
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>

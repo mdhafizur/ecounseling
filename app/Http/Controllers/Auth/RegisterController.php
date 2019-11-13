@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Session;
+use Illuminate\Support\Facades\Storage;
+
 
 class RegisterController extends Controller
 {
@@ -118,10 +120,22 @@ class RegisterController extends Controller
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
+            'status' => false,
             'type' => implode(",", $request['type']),
 
 
+
+
+
         ]);
+        if ($request->hasfile('resume')) {
+            $filename = $request->resume->getClientOriginalName;
+            $request->file->storeAs('public/pdf', $filename);
+            'resume'->$filename;
+
+            counselor::save();
+        }
+
         Session::flash('success', 'Sign Up Successful');
         return redirect()->intended('login/counselor');
     }

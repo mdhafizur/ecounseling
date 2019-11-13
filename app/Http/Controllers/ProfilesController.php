@@ -95,6 +95,15 @@ class ProfilesController extends Controller
         if ($request->has('password')) {
             $user->password = bcrypt($request->password);
         }
+        if ($request->hasfile('avatar')) {
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(public_path('/uploads/avatars/' . $filename));
+
+            $user = Auth::user();
+            $user->avatar = $filename;
+            $user->save();
+        }
 
 
         Session::flash('success', 'Account profile updated.');
@@ -152,5 +161,26 @@ class ProfilesController extends Controller
     {
         $cprofiles = counselor::all();
         return view('viewCprofile')->with('viewCprofile', $cprofiles);
+    }
+
+    public function index()
+    {
+        $counselors = counselor::get();
+        return view('approval', ['counselors' => $counselors]);
+    }
+
+    public function status(Request $request, $id)
+    {
+        $data = counselor::find($id);
+
+        if ($data->status == 0) {
+            $data->status = 1;
+        } else {
+            $data->status = 0;
+        }
+        $data->save();
+        Session::flash('success', $data->name . '  Status has been changed successfully');
+
+        return redirect('approval');
     }
 }

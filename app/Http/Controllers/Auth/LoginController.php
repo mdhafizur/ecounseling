@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Session;
 
 class LoginController extends Controller
 {
@@ -99,12 +100,14 @@ class LoginController extends Controller
         $this->validate($request, [
             'email'   => 'required|email',
             'password' => 'required|min:6'
+
         ]);
 
-        if (Auth::guard('counselor')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+        if (Auth::guard('counselor')->attempt(['email' => $request->email, 'password' => $request->password, 'status' => $request->status = 1], $request->get('remember'))) {
 
             return redirect()->intended('/counselor');
         }
+        Session::flash('error', '  Counselor not registered');
         return back()->withInput($request->only('email', 'remember'));
     }
 }
