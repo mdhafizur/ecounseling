@@ -27,7 +27,8 @@
                                 <th>{{$counselor->email}}</th>
                                 <th>{{$counselor->type}}</th>
                                 <th>{{$counselor->contact}}</th>
-                                <th>{{$counselor->resume}}</th>
+                                <th><a href="{{url('/pdf')}}/{{$counselor->id}}">Download PDF</a></th>
+
                                 <th>@if($counselor->status==0) Inactive @else Active @endif</th>
                                 <th><a href="{{route('status', ['id'=>$counselor->id])}}">@if($counselor->status==1)Inactive
                                         @else Active @endif</a></th>

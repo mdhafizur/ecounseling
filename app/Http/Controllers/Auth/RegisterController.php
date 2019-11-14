@@ -15,6 +15,7 @@ use Session;
 use Illuminate\Support\Facades\Storage;
 
 
+
 class RegisterController extends Controller
 {
     /*
@@ -116,25 +117,26 @@ class RegisterController extends Controller
     protected function createCounselor(Request $request)
     {
         $this->validator($request->all())->validate();
+
+        $filename = 'empty';
+        if ($request->hasfile('resume')) {
+            $filename = $request->file('resume')->store('/', 'pdf');
+        }
+
         counselor::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
             'status' => false,
             'type' => implode(",", $request['type']),
+            'resume' => $filename,
 
 
 
 
 
         ]);
-        if ($request->hasfile('resume')) {
-            $filename = $request->resume->getClientOriginalName;
-            $request->file->storeAs('public/pdf', $filename);
-            'resume'->$filename;
 
-            counselor::save();
-        }
 
         Session::flash('success', 'Sign Up Successful');
         return redirect()->intended('login/counselor');

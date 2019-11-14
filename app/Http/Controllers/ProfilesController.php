@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\counselor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Auth;
 use Session;
 use Image;
@@ -165,12 +166,18 @@ class ProfilesController extends Controller
 
     public function index()
     {
+
+
         $counselors = counselor::get();
         return view('approval', ['counselors' => $counselors]);
     }
 
     public function status(Request $request, $id)
     {
+
+
+
+
         $data = counselor::find($id);
 
         if ($data->status == 0) {
@@ -182,5 +189,10 @@ class ProfilesController extends Controller
         Session::flash('success', $data->name . '  Status has been changed successfully');
 
         return redirect('approval');
+    }
+    public function pdf(Request $request, $id)
+    {
+        $filename = counselor::find($id)->resume;
+        return Storage::disk('pdf')->download($filename);
     }
 }

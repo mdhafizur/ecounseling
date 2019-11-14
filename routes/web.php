@@ -81,3 +81,4 @@ Route::get('/viewCprofile', 'ProfilesController@getCprofiles');
 
 Route::get('/approval', 'ProfilesController@index');
 Route::get('status/{id}', 'ProfilesController@status')->name('status');
+Route::get('pdf/{id}', 'ProfilesController@pdf')->name('pdf');
