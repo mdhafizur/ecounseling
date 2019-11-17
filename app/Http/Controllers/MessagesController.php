@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Message;
+use App\cmessages;
 
 class MessagesController extends Controller
 {
@@ -15,7 +15,7 @@ class MessagesController extends Controller
         ]);
 
         //create a new maessage
-        $message = new Message;
+        $message = new cmessages;
         $message->name = $request->input('name');
         $message->email = $request->input('email');
         $message->message = $request->input('message');
@@ -29,7 +29,7 @@ class MessagesController extends Controller
     //view messages
     public function getMessages()
     {
-        $messages = Message::all();
+        $messages = cmessages::all();
         return view('messages')->with('messages', $messages);
     }
 }

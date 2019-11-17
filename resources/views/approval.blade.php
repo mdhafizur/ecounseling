@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Waiting for Approval</div>
+                <div class="card-header">Approval</div>
 
                 <div class="card-body">
                     <table class="table">
@@ -27,7 +27,8 @@
                                 <th>{{$counselor->email}}</th>
                                 <th>{{$counselor->type}}</th>
                                 <th>{{$counselor->contact}}</th>
-                                <th><a href="{{url('/pdf')}}/{{$counselor->id}}">Download PDF</a></th>
+                                <th>@if($counselor->status==1)<a href="{{url('/pdf')}}/{{$counselor->resume}}">Download
+                                        PDF</a>@endif</th>
 
                                 <th>@if($counselor->status==0) Inactive @else Active @endif</th>
                                 <th><a href="{{route('status', ['id'=>$counselor->id])}}">@if($counselor->status==1)Inactive

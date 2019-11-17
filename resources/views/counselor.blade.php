@@ -1,4 +1,7 @@
 @extends('layouts.auth')
-<h1>COunselor</h1>
+
+@section('content')
+<h3>Counselor</h3>
 
 <a href="{{route('counselor.profile')}}">My Profile</a>
+@endsection

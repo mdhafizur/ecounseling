@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-
+@section('content')
 <h3>Student</h3>
 
 <a href="{{route('student.profile')}}">My Profile</a>
@@ -38,15 +38,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#depressionModal">
         Depression Assessment
@@ -74,3 +65,4 @@
             </div>
         </div>
     </div>
+    @endsection

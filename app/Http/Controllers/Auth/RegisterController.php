@@ -94,12 +94,7 @@ class RegisterController extends Controller
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
-            'matric' => $request['matric'],
-            'faculty' => $request['faculty'],
-            'department' => $request['department'],
-            'year' => $request['year'],
-            'nationality' => $request['nationality'],
-            'contact' => $request['contact'],
+
         ]);
         Session::flash('success', 'Sign Up Successful');
         return redirect()->intended('login/student');

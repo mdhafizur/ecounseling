@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
 use Auth;
@@ -89,7 +90,7 @@ class LoginController extends Controller
 
 
 
-    //student
+    //counselor
     public function showCounselorLoginForm()
     {
         return view('auth.login', ['url' => 'counselor']);

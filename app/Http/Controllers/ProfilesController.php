@@ -190,7 +190,7 @@ class ProfilesController extends Controller
 
         return redirect('approval');
     }
-    public function pdf(Request $request, $id)
+    public function pdf($id)
     {
         $filename = counselor::find($id)->resume;
         return Storage::disk('pdf')->download($filename);
