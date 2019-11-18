@@ -13,7 +13,7 @@
                 <div class="card-body">
 
                     <form method="POST" action="{{ route('student.profile.update') }}"
-                        aria-label="{{ __('Edit Profile') }}">
+                        aria-label="{{ __('Edit Profile') }}" enctype="multipart/form-data">
 
                         @csrf
                         <div class="col-md-10 col-md-offset-1">
@@ -95,7 +95,7 @@
                             <div class="col-md-6">
                                 <input id="matric" type="text"
                                     class="form-control{{ $errors->has('matric') ? ' is-invalid' : '' }}" name="matric"
-                                    value="{{ old('matric', $user->matric) }}" required autofocus>
+                                    value="{{ old('matric', $user->matric) }}">
 
                                 @if ($errors->has('matric'))
                                 <span class="invalid-feedback" role="alert">
@@ -115,7 +115,7 @@
                             <div class="col-md-6">
                                 <input id="faculty" type="text"
                                     class="form-control{{ $errors->has('faculty') ? ' is-invalid' : '' }}"
-                                    name="faculty" value="{{ old('faculty', $user->faculty) }}" required autofocus>
+                                    name="faculty" value="{{ old('faculty', $user->faculty) }}">
 
                                 @if ($errors->has('faculty'))
                                 <span class="invalid-feedback" role="alert">
@@ -134,8 +134,7 @@
                             <div class="col-md-6">
                                 <input id="department" type="text"
                                     class="form-control{{ $errors->has('department') ? ' is-invalid' : '' }}"
-                                    name="department" value="{{ old('department', $user->department) }}" required
-                                    autofocus>
+                                    name="department" value="{{ old('department', $user->department) }}">
 
                                 @if ($errors->has('department'))
                                 <span class="invalid-feedback" role="alert">
@@ -152,7 +151,7 @@
                             <div class="col-md-6">
                                 <input id="year" type="text"
                                     class="form-control{{ $errors->has('year') ? ' is-invalid' : '' }}" name="year"
-                                    value="{{ old('year', $user->year) }}" required autofocus>
+                                    value="{{ old('year', $user->year) }}">
 
                                 @if ($errors->has('year'))
                                 <span class="invalid-feedback" role="alert">
@@ -170,8 +169,7 @@
                             <div class="col-md-6">
                                 <input id="nationality" type="text"
                                     class="form-control{{ $errors->has('nationality') ? ' is-invalid' : '' }}"
-                                    name="nationality" value="{{ old('nationality', $user->nationality) }}" required
-                                    autofocus>
+                                    name="nationality" value="{{ old('nationality', $user->nationality) }}">
 
                                 @if ($errors->has('nationality'))
                                 <span class="invalid-feedback" role="alert">
@@ -191,7 +189,7 @@
                             <div class="col-md-6">
                                 <input id="contact" type="text"
                                     class="form-control{{ $errors->has('contact') ? ' is-invalid' : '' }}"
-                                    name="contact" value="{{ old('contact', $user->contact) }}" required autofocus>
+                                    name="contact" value="{{ old('contact', $user->contact) }}">
 
                                 @if ($errors->has('contact'))
                                 <span class="invalid-feedback" role="alert">

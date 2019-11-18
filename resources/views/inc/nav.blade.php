@@ -25,9 +25,7 @@
              <li class="nav-item">
                  <a class="nav-link" href="/about">About</a>
              </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="/contact">Contact</a>
-             </li>
+
 
              <li class="nav-item dropdown">
                  <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
@@ -56,11 +54,32 @@
 
 
          </ul>
-
+         <li id="git" class="nav-item" style="float: right;">
+             <a class="nav-link" href="/contact">GET IN TOUCH</a>
+         </li>
      </div>
  </nav>
  @endif
+ <style>
+     li {
+         padding: 10px;
+         font-size: large;
+     }
 
+     #git {
+         -webkit-transition-duration: 0.4s;
+         /* Safari */
+         transition-duration: 0.4s;
+
+     }
+
+     #git:hover {
+         background-color: white;
+         /* Green */
+         color: blue;
+     }
+
+ </style>
 
 
 

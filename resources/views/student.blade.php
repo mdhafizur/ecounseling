@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 @section('content')
-<h3>Student</h3>
+<h3 style="text-align: center;">Welcome {{ Auth::user()->name }} </h3>
 
 <a href="{{route('student.profile')}}">My Profile</a>
 <a href='/createAppointment'">Make Appointment</a>

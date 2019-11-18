@@ -50,8 +50,9 @@
                                  style="position:relative; padding-left:50px">
 
                                  <img src="/uploads/avatars/{{Auth::user()->avatar}}"
-                                     style="width: 32px; height: 32px; position:absolute; top:1x; left: 10px; border-radius:50%">
-                                 {{ Auth::user()->name }} <span class="caret"></span>
+                                     style="width: 60px; height: 60px; position:absolute; top:1x; left: 10px; border-radius:50% ; ">
+                                 <span class="caret" style="font-size: xx-large; padding: 50px;">
+                                     {{ Auth::user()->name }} </span>
 
                              </a>
 
@@ -123,6 +124,9 @@
          });
 
      </script>
+
+     <img src='https://lh3.googleusercontent.com/FpfcSVU8MfH6yqZ9AbZD92L6aKI7CNcvnRFt6Fxe7OA879EwXU2vq-rzCiwoVmWVaipIqLN5=w640-h400-e365'
+         style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
 
  </body>
 

@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
-<h3 class="page-title">@lang('Make Appointment')</h3>
+<h3 class="page-title" style="text-align: center;">@lang('Make Appointment')</h3>
 {!! Form::open(['method' => 'POST', 'route' => ['appointments.store']]) !!}
 
 

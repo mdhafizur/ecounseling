@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Contact</h1>
+<h1 style="text-align: center; padding: 40px;">GET IN TOUCH WITH US</h1>
 <div class="row justify-content-center">
 
     {!! Form::open(['url' => 'contact/submit']) !!}
