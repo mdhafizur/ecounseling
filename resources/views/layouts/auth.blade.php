@@ -125,8 +125,7 @@
 
      </script>
 
-     <img src='https://lh3.googleusercontent.com/FpfcSVU8MfH6yqZ9AbZD92L6aKI7CNcvnRFt6Fxe7OA879EwXU2vq-rzCiwoVmWVaipIqLN5=w640-h400-e365'
-         style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
+     <img src='/files/auth.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
 
  </body>
 

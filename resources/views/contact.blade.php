@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 style="text-align: center; padding: 40px;">GET IN TOUCH WITH US</h1>
-<div class="row justify-content-center">
+<h1 style="text-align: center; padding: 40px;">We'd love to hear from you</h1>
+<div class="row justify-content-center" style="">
 
     {!! Form::open(['url' => 'contact/submit']) !!}
     <div class="form-group">
@@ -22,4 +22,6 @@
     </div>
     {!! Form::close() !!}
 </div>
+<img src='/files/contact.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
+
 @endsection
