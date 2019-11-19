@@ -34,6 +34,17 @@
                                 <th>@if($counselor->status==0) Inactive @else Active @endif</th>
                                 <th><a href="{{route('status', ['id'=>$counselor->id])}}">@if($counselor->status==1)Inactive
                                         @else Active @endif</a></th>
+                                <th>
+                                    <li class="list-group-item">
+                                        <form method="POST" action="/approval/{{ $counselor->id }}"
+                                            class="d-inline-block" onsubmit="return confirm('Are you sure?')">
+                                            @csrf @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">
+                                                remove
+                                            </button>
+                                        </form>
+                                    </li>
+                                </th>
                             </tr>
                             @endforeach
                         </tbody>

@@ -165,13 +165,7 @@ class ProfilesController extends Controller
         return view('viewCprofile')->with('viewCprofile', $cprofiles);
     }
 
-    public function index()
-    {
 
-
-        $counselors = counselor::get();
-        return view('approval', ['counselors' => $counselors]);
-    }
 
     public function status(Request $request, $id)
     {
@@ -205,5 +199,21 @@ class ProfilesController extends Controller
             ->get();
 
         return view('appointedStudents')->with('appointments', $appointments);
+    }
+
+    //approval controller
+    public function index()
+    {
+
+
+        $counselors = counselor::get();
+        return view('approval', ['counselors' => $counselors]);
+    }
+
+    public function approvalDestroy(Counselor $counselor)
+    {
+        $counselor->delete();
+
+        return back();
     }
 }
