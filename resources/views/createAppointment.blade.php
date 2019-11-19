@@ -11,22 +11,23 @@
 
 <div class="row justify-content-center">
     <div class="col-md-8 form-group">
-        {!! Form::label('counselor_id', 'Counselor*', ['class' => 'control-label']) !!}
-        <select id="counselor_id" name="counselor_id" class="form-control select2" required>
-            <option value="">Please select</option>
-            @foreach($counselors as $counselor)
-            <option value="{{ $counselor->id }}" {{ (old("client_id") == $counselor->id ? "selected":"") }}>
-                {{ $counselor->name }} </option>
-            @endforeach
+        <div class="col-md-8 form-group">
+            {!! Form::label('counselor_id', 'Counselor*', ['class' => 'control-label']) !!}
+            <select id="counselor_id" name="counselor_id" class="form-control select2" required>
+                <option value="">Please select</option>
+                @foreach($counselors as $counselor)
+                <option value="{{ $counselor->id }}" {{ (old("client_id") == $counselor->id ? "selected":"") }}>
+                    {{ $counselor->name }} </option>
+                @endforeach
 
-        </select>
-        <p class="help-block"></p>
-        @if($errors->has('counselor_id'))
-        <p class="help-block">
-            {{ $errors->first('counselor_id') }}
-        </p>
-        @endif
-        <input type="hidden" id="price" value="0">
+            </select>
+            <p class="help-block"></p>
+            @if($errors->has('counselor_id'))
+            <p class="help-block">
+                {{ $errors->first('counselor_id') }}
+            </p>
+            @endif
+        </div>
 
         <div class="col-md-8 form-group">
             {!! Form::label('date', 'Date*', ['class' => 'control-label']) !!}
@@ -59,9 +60,12 @@
             </p>
             @endif
         </div>
-        {!! Form::submit(trans('Create Appointment'), ['class' => 'btn btn-danger']) !!}
-        {!! Form::close() !!}
-        @stop
+        <div class="col-md-8 form-group">
+            {!! Form::submit(trans('Create Appointment'), ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
+            @stop
+
+        </div>
 
     </div>
 

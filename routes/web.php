@@ -76,6 +76,8 @@ Route::group(['middleware' => 'auth:counselor'], function () {
     Route::view('/counselor', 'counselor');
     Route::get('counselor/profile', ['uses' => 'ProfilesController@indexCounselor', 'as' => 'counselor.profile']);
     Route::post('counselor/profile/update', ['uses' => 'ProfilesController@updateCounselor', 'as' => 'counselor.profile.update']);
+    Route::get('/appointedStudents', 'ProfilesController@appointedStudents');
+    Route::delete('/appointments/{appointment}', 'AppointmentsController@destroy');
 });
 Route::get('/viewCprofile', 'ProfilesController@getCprofiles');
 
