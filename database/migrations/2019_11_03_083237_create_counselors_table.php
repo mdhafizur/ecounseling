@@ -22,7 +22,7 @@ class CreateCounselorsTable extends Migration
             $table->string('type')->nullable();
             $table->integer('contact')->nullable();
             $table->string('resume')->nullable();
-            $table->string('description')->nullable();
+            $table->string('about')->nullable();
             $table->boolean('status');
 
             $table->rememberToken();

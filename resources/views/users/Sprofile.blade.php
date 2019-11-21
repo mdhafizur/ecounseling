@@ -199,7 +199,21 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="About Me"
+                                class="col-md-4 col-form-label text-md-right">{{ __('About Me') }}</label>
 
+                            <div class="col-md-6">
+
+                                <textarea id="about" name="about" class="form-control">{{$user->about}}</textarea>
+
+                                @if ($errors->has('About Me'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('About Me') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
 
 
 

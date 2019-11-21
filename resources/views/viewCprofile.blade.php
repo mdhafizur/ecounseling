@@ -15,6 +15,8 @@
     <li class="list-group-item">Name: {{$cprofile->name}}</li>
     <li class="list-group-item">Email: {{$cprofile->email}}</li>
     <li class="list-group-item">Counselor Type: {{$cprofile->type}}</li>
+    <li class="list-group-item">Contact No: {{$cprofile->contact}}</li>
+    <li class="list-group-item">About: {{$cprofile->about}}</li>
 
 
 </ul>

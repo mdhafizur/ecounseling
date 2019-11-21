@@ -4,6 +4,7 @@
 
 <ul class="list-group">
     @forelse ($appointments as $appointment)
+    <img src="/uploads/avatars/{{ $appointment->student->avatar }}" style="width:150px; height:150px">
     <li class="list-group-item">
         Name: {{ $appointment->student->name }}
     </li>
@@ -11,7 +12,25 @@
         Email: {{ $appointment->student->email }}
     </li>
     <li class="list-group-item">
-        Counselor Type: {{ $appointment->student->matric }}
+        Matric No : {{ $appointment->student->matric }}
+    </li>
+    <li class="list-group-item">
+        Faculty : {{ $appointment->student->faculty }}
+    </li>
+    <li class="list-group-item">
+        Department : {{ $appointment->student->department }}
+    </li>
+    <li class="list-group-item">
+        Year : {{ $appointment->student->year }}
+    </li>
+    <li class="list-group-item">
+        Nationality : {{ $appointment->student->nationality }}
+    </li>
+    <li class="list-group-item">
+        Contact No : {{ $appointment->student->contact }}
+    </li>
+    <li class="list-group-item">
+        About : {{ $appointment->student->about }}
     </li>
     <li class="list-group-item">
         Date/Time: {{ optional($appointment->date)->format('Y-m-d H:i:s') }}

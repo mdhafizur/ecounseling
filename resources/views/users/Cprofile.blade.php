@@ -106,14 +106,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="description"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+                            <label for="about" class="col-md-4 col-form-label text-md-right">{{ __('About') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="description" type="textarea"
-                                    class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}"
-                                    name="description" value="{{ old('description', $user->description) }}" required
-                                    autofocus>
+                                <textarea id="about" type="textarea"
+                                    class="form-control{{ $errors->has('about') ? ' is-invalid' : '' }}" name="about"
+                                    value="{{ old('about', $user->about) }}" required autofocus>
                                 </textarea>
 
                                 @if ($errors->has('description'))

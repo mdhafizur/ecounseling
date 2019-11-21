@@ -24,7 +24,7 @@ class CreateStudentsTable extends Migration
             $table->string('year')->nullable();
             $table->string('nationality')->nullable();
             $table->integer('contact')->nullable();
-            $table->integer('psychological condition')->nullable();
+            $table->string('about')->nullable();
             $table->string('avatar')->default('default.jpg');
             $table->rememberToken();
             $table->timestamps();

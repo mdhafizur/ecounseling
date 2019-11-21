@@ -97,6 +97,19 @@ class AppointmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function appointedStudents()
+    {
+        $user = Auth::user();
+
+        $appointments = Appointment::query()
+            ->with(['student']) // eager load appointment's student
+            ->where('counselor_id', $user->id) // filter by current user
+            ->whereHas('student') // only appointments with students
+            ->get();
+
+        return view('appointedStudents')->with('appointments', $appointments);
+    }
+
     public function destroy(Appointment $appointment)
     {
         $appointment->delete();
