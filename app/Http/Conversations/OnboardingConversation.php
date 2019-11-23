@@ -18,10 +18,23 @@ class OnboardingConversation extends Conversation
             ]);
 
             $this->say('Nice to meet you ' . $answer->getText());
-            $this->askEmail();
+            $this->askService();
         });
     }
-
+    public function askService()
+    {
+        $this->ask('What can i do for you?', function (Answer $answer) {
+            if ($answer == 'i want to make an appointment' || 'make an appointment') {
+                $this->ask('What service would you like?\n we provide Session Counseling, Career Counseling', function (Answer $answer) {
+                    $this->bot->userStorage()->save([
+                        'type' => $answer->getText(),
+                    ]);
+                });
+            } else {
+                $this->say('Enter Service ' . $answer->name);
+            }
+        });
+    }
     public function askEmail()
     {
         $this->ask('What is your email?', function (Answer $answer) {
