@@ -6,6 +6,7 @@ use App\Appointment;
 use Illuminate\Http\Request;
 use Session;
 use Auth;
+use App\botAppointment;
 
 class AppointmentsController extends Controller
 {
@@ -114,6 +115,18 @@ class AppointmentsController extends Controller
     {
         $appointment->delete();
 
+        return back();
+    }
+
+    public function getbotAppointments()
+    {
+        $botAppointment = botAppointment::all();
+        return view('botAppointment')->with('botAppointments', $botAppointment);
+    }
+
+    public function destroybotAppointments(botAppointment $appointment)
+    {
+        $appointment->delete();
         return back();
     }
 }

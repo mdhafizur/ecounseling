@@ -87,3 +87,6 @@ Route::get('pdf/{id}', 'ProfilesController@pdf')->name('pdf');
 
 
 Route::delete('/approval/{counselor}', 'ProfilesController@approvalDestroy');
+
+Route::get('/botAppointment', 'AppointmentsController@getbotAppointments');
+Route::delete('/botAppointment/{appointment}', 'AppointmentsController@destroybotAppointments');
