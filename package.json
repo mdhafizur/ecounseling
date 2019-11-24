@@ -20,5 +20,8 @@
         "sass": "^1.23.1",
         "sass-loader": "^8.0.0",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "jquery-datetimepicker": "^2.5.21"
     }
 }

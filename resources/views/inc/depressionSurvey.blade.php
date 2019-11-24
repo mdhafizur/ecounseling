@@ -26,7 +26,7 @@
             "description": "Over the last 2 weeks, how often have you been bothered by any of the following problem?\n\n",
             "completedHtmlOnCondition": [{
                 "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}<=4",
-                "html": "<h1>Minimal Depression<h1>"
+                "html": "<h1>Minimal Depression<h1> <br> You're doing just fine. Take care of yourself little more. Don't Stress"
             }, {}, {
                 "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}<=9 and ({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}>=5",
                 "html": "<h1>Mild Depression</h1>"

@@ -46,7 +46,7 @@ class AppointmentsController extends Controller
     {
         $user = Auth::user();
         $appointment = new Appointment;
-
+        $this->validate($request, []);
         $appointment->student_id = $user->id;
         $appointment->counselor_id = $request->counselor_id;
         $appointment->date = $request->date;

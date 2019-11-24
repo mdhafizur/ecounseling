@@ -109,6 +109,6 @@ class LoginController extends Controller
             return redirect()->intended('/counselor');
         }
         Session::flash('error', '  Counselor not registered');
-        return back()->withInput($request->only('email', 'remember'));
+        return redirect()->intended('/waiting');
     }
 }

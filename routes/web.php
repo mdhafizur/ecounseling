@@ -90,3 +90,4 @@ Route::delete('/approval/{counselor}', 'ProfilesController@approvalDestroy');
 
 Route::get('/botAppointment', 'AppointmentsController@getbotAppointments');
 Route::delete('/botAppointment/{appointment}', 'AppointmentsController@destroybotAppointments');
+Route::view('/waiting', 'waiting');

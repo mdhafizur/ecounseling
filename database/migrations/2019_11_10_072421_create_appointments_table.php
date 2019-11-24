@@ -21,6 +21,8 @@ class CreateAppointmentsTable extends Migration
             $table->foreign('counselor_id', '35989_5913ebf652b9b')->references('id')->on('counselors')->onDelete('cascade');
             $table->datetime('date')->nullable();
             $table->text('comments')->nullable();
+            $table->unique(['counselor_id', 'date']);
+            $table->unique('student_id');
             $table->timestamps();
         });
     }
