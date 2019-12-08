@@ -61,6 +61,7 @@ Route::group(['middleware' => 'auth:student'], function () {
     Route::post('student/profile/update', ['uses' => 'ProfilesController@updateStudent', 'as' => 'student.profile.update']);
     Route::resource('appointments', 'AppointmentsController');
     Route::get('/createAppointment', 'AppointmentsController@create');
+    Route::get('/chat', 'ChatController@index')->name('chat');
 });
 
 
@@ -78,6 +79,9 @@ Route::group(['middleware' => 'auth:counselor'], function () {
     Route::post('counselor/profile/update', ['uses' => 'ProfilesController@updateCounselor', 'as' => 'counselor.profile.update']);
     Route::get('/appointedStudents', 'AppointmentsController@appointedStudents');
     Route::delete('/appointments/{appointment}', 'AppointmentsController@destroy');
+
+    Route::resource('records', 'RecordController');
+    Route::view('/record', 'record');
 });
 Route::get('/viewCprofile', 'ProfilesController@getCprofiles');
 
@@ -91,3 +95,13 @@ Route::delete('/approval/{counselor}', 'ProfilesController@approvalDestroy');
 Route::get('/botAppointment', 'AppointmentsController@getbotAppointments');
 Route::delete('/botAppointment/{appointment}', 'AppointmentsController@destroybotAppointments');
 Route::view('/waiting', 'waiting');
+
+
+Auth::routes();
+
+Route::post('pusher/auth', function () {
+    return auth()->user();
+});
+
+
+Route::get('viewRecords/{id}', 'RecordController@index')->name('viewRecords');

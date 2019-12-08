@@ -1,6 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
+@include('inc.messages')
 <h3 class="page-title" style="text-align: center;">@lang('Make Appointment')</h3>
 {!! Form::open(['method' => 'POST', 'route' => ['appointments.store']]) !!}
 
@@ -21,6 +22,7 @@
                 @endforeach
 
             </select>
+
             <p class="help-block"></p>
             @if($errors->has('counselor_id'))
             <p class="help-block">
@@ -70,4 +72,33 @@
 
     </div>
 
+</div>
+<div class="form-group" style=" position:absolute; top: 200px; right: 50px;">
+    <h3 class="page-title" style="text-align: center;">@lang('Your Appointments')</h3>
+    @forelse ($counselorS as $counselorS)
+
+    <li class="list-group-item" style="height: 100px;">
+        <img src="/uploads/avatars/{{$counselorS->avatar}}"
+            style="width: 60px; height: 60px; position:absolute; top:1x; left: 10px; border-radius:50% ; ">
+    </li>
+    <li class="list-group-item">
+        Counselor Name: {{ $counselorS->name }}
+    </li>
+    <li class="list-group-item">
+        Type: {{ $counselorS->type }}
+    </li>
+    <li class="list-group-item">
+        Appointment Date: {{ $counselorS->date }}
+    </li>
+    <li class="list-group-item">
+        email: {{ $counselorS->email }}
+    </li>
+    <li class="list-group-item">
+        Contact: {{ $counselorS->contact }}
+    </li>
+    @empty
+    <li class="list-group-item">
+        <em class="text-muted">No appointments</em>
+    </li>
+    @endforelse
 </div>

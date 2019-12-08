@@ -22,6 +22,12 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "jquery-datetimepicker": "^2.5.21"
+        "@fullcalendar/core": "^4.3.1",
+        "@fullcalendar/daygrid": "^4.3.0",
+        "jquery-datetimepicker": "^2.5.21",
+        "laravel-echo": "^1.6.1",
+        "pusher-js": "^5.0.3",
+        "tempusdominus-bootstrap-4": "^5.1.2",
+        "vue": "^2.6.10"
     }
 }

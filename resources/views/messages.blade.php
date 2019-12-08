@@ -11,6 +11,9 @@
     <li class="list-group-item">Message: {{$message->message}}</li>
 </ul>
 @endforeach
-
+@else
+<li class="list-group-item">
+    <em class="text-muted">No Messages</em>
+</li>
 @endif
 @endsection

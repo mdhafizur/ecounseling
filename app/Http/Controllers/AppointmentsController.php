@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use Session;
 use Auth;
 use App\botAppointment;
+use Illuminate\Validation\Rule;
+use App\Rules\IsAvailable;
+use Illuminate\Support\Facades\DB;
+
 
 class AppointmentsController extends Controller
 {
@@ -27,11 +31,20 @@ class AppointmentsController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
         $relations = [
             'students' => \App\student::get(),
             'counselors' => \App\counselor::get(),
+            'counselorS' => DB::table('appointments')
+                ->select('*')
+                ->join('counselors', 'counselors.id', '=', 'appointments.counselor_id')
+                ->where('student_id', '=', $user->id)
+                ->get(),
 
         ];
+
+
+
 
         return view('createAppointment', $relations);
     }
@@ -46,7 +59,16 @@ class AppointmentsController extends Controller
     {
         $user = Auth::user();
         $appointment = new Appointment;
-        $this->validate($request, []);
+
+        $request->validate([
+            'student_id' => Rule::unique('appointments', 'student_id'),
+            'counselor_id' => [
+                Rule::exists('counselors', 'id'), // required so the next Rule is invalid only for date
+                new IsAvailable($request->input('date'))
+            ]
+        ], [
+            'student_id.unique' => 'student already has appointment',
+        ]);
         $appointment->student_id = $user->id;
         $appointment->counselor_id = $request->counselor_id;
         $appointment->date = $request->date;

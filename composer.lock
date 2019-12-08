@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5c2ccd88a68517ed1ffc70395e9d67b",
+    "content-hash": "3689f93b3ec638b6aa0384ff438fdca0",
     "packages": [
         {
             "name": "botman/botman",
@@ -503,6 +503,59 @@
                 "event-emitter"
             ],
             "time": "2017-07-23T21:35:13+00:00"
+        },
+        {
+            "name": "felixkiss/uniquewith-validator",
+            "version": "3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/felixkiss/uniquewith-validator.git",
+                "reference": "c9d088543f93d3ebca6c1cc40ba8cbd6d855d79c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/felixkiss/uniquewith-validator/zipball/c9d088543f93d3ebca6c1cc40ba8cbd6d855d79c",
+                "reference": "c9d088543f93d3ebca6c1cc40ba8cbd6d855d79c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*|^6.0",
+                "illuminate/validation": "5.*|^6.0",
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "bossa/phpspec2-expect": "^3.0",
+                "phpspec/phpspec": "^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Felixkiss\\UniqueWithValidator\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Felixkiss\\UniqueWithValidator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Felix Kiss",
+                    "email": "felix@felixkiss.com"
+                }
+            ],
+            "description": "Custom Laravel Validator for combined unique indexes",
+            "homepage": "https://github.com/felixkiss/uniquewith-validator",
+            "keywords": [
+                "laravel"
+            ],
+            "time": "2019-09-10T07:24:13+00:00"
         },
         {
             "name": "fideloper/proxy",
@@ -1339,16 +1392,16 @@
         },
         {
             "name": "musonza/chat",
-            "version": "4.0.3",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/musonza/chat.git",
-                "reference": "f32cd7f02544f339896bf011c9942e3170a64777"
+                "reference": "e60fcbdfa1c6f5e08d743142fd8e804bb8ec6cf4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/musonza/chat/zipball/f32cd7f02544f339896bf011c9942e3170a64777",
-                "reference": "f32cd7f02544f339896bf011c9942e3170a64777",
+                "url": "https://api.github.com/repos/musonza/chat/zipball/e60fcbdfa1c6f5e08d743142fd8e804bb8ec6cf4",
+                "reference": "e60fcbdfa1c6f5e08d743142fd8e804bb8ec6cf4",
                 "shasum": ""
             },
             "require": {
@@ -1396,7 +1449,7 @@
                 "laravel",
                 "messaging"
             ],
-            "time": "2019-11-07T12:53:56+00:00"
+            "time": "2019-12-05T00:23:45+00:00"
         },
         {
             "name": "nesbot/carbon",

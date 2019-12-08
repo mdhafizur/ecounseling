@@ -1,21 +1,10 @@
  @section('navbar')
- <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+ <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="margin-bottom: 0;">
      <a class="navbar-brand" href="/">E-Counseling</a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03"
          aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
      </button>
-
-
-     @if( auth()->check() )
-     <li class="nav-item">
-         <a class="nav-link font-weight-bold" href="#">Hi {{ auth()->user()->name }}</a>
-     </li>
-     <li class="nav-item">
-         <a class="nav-link" href="/logout">Log Out</a>
-     </li>
-     @else
-
 
      <div class="collapse navbar-collapse" id="navbarsExample03">
          <ul class="navbar-nav mr-auto">
@@ -36,33 +25,31 @@
 
                  </div>
              </li>
+
              <li class="nav-item dropdown">
                  <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
                      aria-haspopup="true" aria-expanded="false">Students</a>
                  <div class="dropdown-menu" aria-labelledby="dropdown03">
                      <a class="dropdown-item" href="/register/student">Sign Up</a>
                      <a class="dropdown-item" href="/login/student">Log In</a>
-
-
-
                  </div>
              </li>
 
              <li class="nav-item">
                  <a class="nav-link" href="#" data-toggle="modal" data-target="#modalLoginAvatar">Admin</a>
              </li>
-
-
          </ul>
+
          <li id="git" class="nav-item" style="float: right;">
              <a class="nav-link" href="/contact">GET IN TOUCH</a>
          </li>
+
      </div>
  </nav>
- @endif
+
  <style>
      li {
-         padding: 10px;
+         padding: 20px;
          font-size: large;
      }
 
@@ -77,6 +64,10 @@
          background-color: white;
          /* Green */
          color: blue;
+     }
+
+     .navbar {
+         margin-bottom: 0;
      }
 
  </style>

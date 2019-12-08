@@ -10,6 +10,12 @@ return [
     'broadcasts' => false,
 
     /*
+     * The event to fire when a message is sent
+     * See Musonza\Chat\Eventing\MessageWasSent if you want to customize.
+     */
+    'sent_message_event' => 'Musonza\Chat\Eventing\MessageWasSent',
+
+    /*
      * Specify the fields that you want to return each time for the sender.
      * If not set or empty, all the columns for the sender will be returned
      *
@@ -47,12 +53,12 @@ return [
         'pageName' => 'page',
     ],
 
-    /*
+    /**
      * Model Transformers
      */
     'transformers' => [
-        'conversation' => null,
-        'message'      => null,
-        'participant'  => null,
-    ],
+        'conversation' => \App\Transformers\ConversationTransformer::class,
+        'message' => \App\Transformers\MessageTransformer::class,
+        'participant' =>  \App\Transformers\ParticipantTransformer::class,
+    ]
 ];

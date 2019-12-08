@@ -113,9 +113,47 @@
                                 class="col-md-4 col-form-label text-md-right">{{ __('Faculty') }}</label>
 
                             <div class="col-md-6">
-                                <input id="faculty" type="text"
+                                <select class="form-control" id="faculty" name="faculty">
+                                    <option value="$user->faculty">{{$user->faculty}}</option>
+                                    <option value="Faculty of Agriculture ">Faculty of Agriculture </option>
+                                    <option value="Faculty of Forestry ">Faculty of Forestry </option>
+                                    <option value="Faculty of Veterinary Medicine">Faculty of Veterinary Medicine
+                                    </option>
+                                    <option value="Faculty of Economics and Management ">Faculty of Economics and
+                                        Management
+                                    </option>
+                                    <option value="Faculty of Engineering">Faculty of Engineering
+                                    </option>
+                                    <option value="Faculty of Educational Studies">Faculty of Educational Studies
+                                    </option>
+                                    <option value="Faculty of Science">Faculty of Science
+                                    </option>
+                                    <option value="Faculty of Food Science and Technology">Faculty of Food Science and
+                                        Technology
+                                    </option>
+                                    <option value="Faculty of Human Ecology">Faculty of Human Ecology
+                                    </option>
+                                    <option value="Faculty of Modern Language and Communication">Faculty of Modern
+                                        Language and Communication
+                                    </option>
+                                    <option value="Faculty of Medicine and Health Science">Faculty of Medicine and
+                                        Health Science
+                                    </option>
+                                    <option value="Faculty of Computer Science and Information Technology">Faculty of
+                                        Computer Science and Information Technology
+                                    </option>
+                                    <option value="Faculty of Biotechnology and Biomolecular Sciences">Faculty of
+                                        Biotechnology and Biomolecular Sciences
+                                    </option>Faculty of Computer Science
+                                    <option value="Faculty of Environmental Studies">Faculty of Environmental Studies
+                                    </option>
+                                    <option value="Faculty of Agriculture and Food Sciences (UPMKB)">Faculty of
+                                        Agriculture and Food Sciences (UPMKB)
+                                    </option>
+                                </select>
+                                <!-- <input id="faculty" type="text"
                                     class="form-control{{ $errors->has('faculty') ? ' is-invalid' : '' }}"
-                                    name="faculty" value="{{ old('faculty', $user->faculty) }}">
+                                    name="faculty" value="{{ old('faculty', $user->faculty) }}"> -->
 
                                 @if ($errors->has('faculty'))
                                 <span class="invalid-feedback" role="alert">

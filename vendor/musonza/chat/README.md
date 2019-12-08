@@ -27,6 +27,7 @@ Create a Chat application for your multiple Models
   - [Mark whole conversation as read](#mark-whole-conversation-as-read)
   - [Unread messages count](#unread-messages-count)
   - [Delete a message](#delete-a-message)
+  - [Cleanup Deleted Messages](#cleanup-deleted-messages)
   - [Clear a conversation](#clear-a-conversation)
   - [Get participant conversations](#Get-participant-conversations)
   - [Get a conversation between two participants](#get-a-conversation-between-two-participants)
@@ -234,6 +235,14 @@ Chat::conversation($conversation)->setParticipant($participantModel)->unreadCoun
 Chat::message($message)->setParticipant($participantModel)->delete();
 ```
 
+#### Cleanup Deleted Messages
+
+What to cleanup when all participants have deleted a `$message` or `$conversation`?
+
+Listen for `\Musonza\Chat\Eventing\AllParticipantsDeletedMessage` and 
+
+`\Musonza\Chat\Eventing\AllParticipantsClearedConversation`
+
 #### Clear a conversation
 
 ```php
@@ -346,7 +355,7 @@ $participants = $conversation->getParticipants();
 #### Get participation entry for a Model in a conversation
 
 ```php
-Chat::conversation($conversation)->setParticipant($model)->getParticipation();
+Chat::conversation($conversation)->getParticipation($model);
 ```
 
 #### Update participation settings
@@ -357,8 +366,7 @@ Set Conversation settings for participant (example: mute_mentions, mute_conversa
 $settings = ['mute_mentions' => true];
 
 Chat::conversation($conversation)
-    ->setParticipant($this->alpha)
-    ->getParticipation()
+    ->getParticipation($this->alpha)
     ->update(['settings' => $settings]);
 ```
 

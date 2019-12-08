@@ -46,7 +46,7 @@ class ConversationService
 
     public function getById($id)
     {
-        return $this->conversation->findOrFail($id);
+        return $this->conversation->find($id);
     }
 
     /**
@@ -191,8 +191,10 @@ class ConversationService
         return $this;
     }
 
-    public function getParticipation()
+    public function getParticipation($participant = null)
     {
-        return $this->participant->participation()->first();
+        $participant = $participant ?? $this->participant;
+
+        return $participant->participation()->first();
     }
 }

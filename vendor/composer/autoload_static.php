@@ -511,6 +511,13 @@ class ComposerStaticInit3697ca7aa6cc23329f88db8dffb8e4df
                 0 => __DIR__ . '/..' . '/scrivo/highlight.php',
             ),
         ),
+        'F' => 
+        array (
+            'Felixkiss\\UniqueWithValidator\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/felixkiss/uniquewith-validator/src',
+            ),
+        ),
         'E' => 
         array (
             'Evenement' => 
@@ -533,6 +540,7 @@ class ComposerStaticInit3697ca7aa6cc23329f88db8dffb8e4df
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\BotManController' => __DIR__ . '/../..' . '/app/Http/Controllers/BotManController.php',
+        'App\\Http\\Controllers\\ChatController' => __DIR__ . '/../..' . '/app/Http/Controllers/ChatController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\MessagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessagesController.php',
@@ -551,11 +559,16 @@ class ComposerStaticInit3697ca7aa6cc23329f88db8dffb8e4df
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Rules\\IsAvailable' => __DIR__ . '/../..' . '/app/Rules/IsAvailable.php',
+        'App\\Transformers\\ConversationTransformer' => __DIR__ . '/../..' . '/app/Transformers/ConversationTransformer.php',
+        'App\\Transformers\\MessageTransformer' => __DIR__ . '/../..' . '/app/Transformers/MessageTransformer.php',
+        'App\\Transformers\\ParticipantTransformer' => __DIR__ . '/../..' . '/app/Transformers/ParticipantTransformer.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\admin' => __DIR__ . '/../..' . '/app/admin.php',
         'App\\botAppointment' => __DIR__ . '/../..' . '/app/botAppointment.php',
         'App\\cmessages' => __DIR__ . '/../..' . '/app/cmessages.php',
         'App\\counselor' => __DIR__ . '/../..' . '/app/counselor.php',
+        'App\\record' => __DIR__ . '/../..' . '/app/record.php',
         'App\\student' => __DIR__ . '/../..' . '/app/student.php',
         'BotMan\\BotMan\\BotMan' => __DIR__ . '/..' . '/botman/botman/src/BotMan.php',
         'BotMan\\BotMan\\BotManFactory' => __DIR__ . '/..' . '/botman/botman/src/BotManFactory.php',
@@ -1366,6 +1379,9 @@ class ComposerStaticInit3697ca7aa6cc23329f88db8dffb8e4df
         'Faker\\Provider\\zh_TW\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/zh_TW/Text.php',
         'Faker\\UniqueGenerator' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/UniqueGenerator.php',
         'Faker\\ValidGenerator' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/ValidGenerator.php',
+        'Felixkiss\\UniqueWithValidator\\RuleParser' => __DIR__ . '/..' . '/felixkiss/uniquewith-validator/src/Felixkiss/UniqueWithValidator/RuleParser.php',
+        'Felixkiss\\UniqueWithValidator\\ServiceProvider' => __DIR__ . '/..' . '/felixkiss/uniquewith-validator/src/Felixkiss/UniqueWithValidator/ServiceProvider.php',
+        'Felixkiss\\UniqueWithValidator\\Validator' => __DIR__ . '/..' . '/felixkiss/uniquewith-validator/src/Felixkiss/UniqueWithValidator/Validator.php',
         'Fideloper\\Proxy\\TrustProxies' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustProxies.php',
         'Fideloper\\Proxy\\TrustedProxyServiceProvider' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustedProxyServiceProvider.php',
         'GuzzleHttp\\Psr7\\AppendStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/AppendStream.php',
@@ -2712,6 +2728,8 @@ class ComposerStaticInit3697ca7aa6cc23329f88db8dffb8e4df
         'Musonza\\Chat\\Commanding\\CommandHandler' => __DIR__ . '/..' . '/musonza/chat/src/Commanding/CommandHandler.php',
         'Musonza\\Chat\\Commanding\\CommandTranslator' => __DIR__ . '/..' . '/musonza/chat/src/Commanding/CommandTranslator.php',
         'Musonza\\Chat\\ConfigurationManager' => __DIR__ . '/..' . '/musonza/chat/src/ConfigurationManager.php',
+        'Musonza\\Chat\\Eventing\\AllParticipantsClearedConversation' => __DIR__ . '/..' . '/musonza/chat/src/Eventing/AllParticipantsClearedConversation.php',
+        'Musonza\\Chat\\Eventing\\AllParticipantsDeletedMessage' => __DIR__ . '/..' . '/musonza/chat/src/Eventing/AllParticipantsDeletedMessage.php',
         'Musonza\\Chat\\Eventing\\ConversationStarted' => __DIR__ . '/..' . '/musonza/chat/src/Eventing/ConversationStarted.php',
         'Musonza\\Chat\\Eventing\\Event' => __DIR__ . '/..' . '/musonza/chat/src/Eventing/Event.php',
         'Musonza\\Chat\\Eventing\\EventDispatcher' => __DIR__ . '/..' . '/musonza/chat/src/Eventing/EventDispatcher.php',

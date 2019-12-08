@@ -11,6 +11,14 @@
                 <div class="card-body">
                     Hi boss!
                     <a href="/messages">Messages</a>
+                    <button type="button" onclick="location.href = '/messages';" class="btn btn-info">
+                        Messages</button>
+
+                    <button type="button" onclick="location.href = '/botAppointment';" class="btn btn-info">Bot
+                        Appointments</button>
+                    <button type="button" onclick="location.href = '/approval';" class="btn btn-info">Approval</button>
+                    <button type="button" onclick="location.href = '/viewCprofile';" class="btn btn-info">Counselors'
+                        Profile</button>
                 </div>
             </div>
         </div>
