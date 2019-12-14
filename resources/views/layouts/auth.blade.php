@@ -9,7 +9,7 @@
      <!-- CSRF Token -->
      <meta name="csrf-token" content="{{ csrf_token() }}">
 
-     <title>{{ config('app.name', 'E-Counseling') }}</title>
+     <title>{{ config('app.name', 'PsyCare') }}</title>
 
      <!-- Scripts -->
      <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
@@ -29,10 +29,11 @@
          };
 
      </script>
+
  </head>
 
  <body>
-     <div id="app">
+     <div>
          <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
              <div class="container">
                  <a class="navbar-brand" href="{{ url('/') }}">
@@ -104,7 +105,7 @@
      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
      <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
-     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+     <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> -->
 
 
 

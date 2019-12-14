@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+</html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>E-Counseling</title>
+    <title>PsyCare</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="/css/app.css" rel="stylesheet">
@@ -33,9 +36,7 @@
         };
 
     </script>
-    <!-- <iframe allow="microphone;" width="350" height="430"
-        src="https://console.dialogflow.com/api-client/demo/embedded/f83e1873-5ca4-437c-8e15-ab873bd2c7fc">
-    </iframe> -->
+
 
 
 
@@ -85,7 +86,7 @@
     </script>
 
 
-    <img src='/files/bg.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
+    <img src='/files/bg1.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
 
 </body>
 

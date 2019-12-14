@@ -5,7 +5,9 @@
 @php
 $conversationId = Request::query('conversation_id');
 @endphp
-<div class="container">
+
+<script src="{{ asset('js/chat.js') }}" defer></script>
+<div id="app" class="container">
     <div class="row justify-content-center">
         <div class="col-md-3">
             <chat-conversations></chat-conversations>

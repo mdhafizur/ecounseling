@@ -16,18 +16,20 @@
         "cross-env": "^6.0.3",
         "laravel-mix": "^5.0.0",
         "lodash": "^4.17.15",
-        "resolve-url-loader": "^3.1.0",
-        "sass": "^1.23.1",
+        "resolve-url-loader": "^3.1.1",
+        "sass": "^1.23.7",
         "sass-loader": "^8.0.0",
-        "vue-template-compiler": "^2.6.10"
+        "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
         "@fullcalendar/core": "^4.3.1",
         "@fullcalendar/daygrid": "^4.3.0",
-        "jquery-datetimepicker": "^2.5.21",
+        "ajax": "0.0.4",
+        "bootstrap": "^4.4.1",
         "laravel-echo": "^1.6.1",
+        "popper.js": "^1.16.0",
         "pusher-js": "^5.0.3",
         "tempusdominus-bootstrap-4": "^5.1.2",
-        "vue": "^2.6.10"
+        "vue": "^2.6.11"
     }
 }

@@ -15,13 +15,13 @@
     style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'> -->
 
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 50%;">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+    <!-- <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+    </ol> -->
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" style="height: 100%">
@@ -49,10 +49,20 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+<div class="info">
+    <h1 style="text-align: center;">Welcome To PsyCare</h1>
+    <section>
+        <p>PsyCare is a website dedicated as an aid to help bring counselors and student together. <br> A student can
+            sign
+            up and make appointment with avilable counselors </p>
+    </section>
+    <h4 id="bot" align="right">Click The Message Icon Below to use the Chat Bot <br>
+        You can make hassle free appointment using it. </h4>
+</div>
 <style>
-    img {
+    .item img {
         width: 100%;
-        max-height: 100%;
+        max-height: 50%;
         object-fit: contain;
     }
 

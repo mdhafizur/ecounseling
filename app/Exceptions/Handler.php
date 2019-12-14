@@ -4,8 +4,6 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-
-
 use Illuminate\Auth\AuthenticationException;
 use Auth;
 
@@ -19,7 +17,6 @@ class Handler extends ExceptionHandler
     protected $dontReport = [
         //
     ];
-
     /**
      * A list of the inputs that are never flashed for validation exceptions.
      *
@@ -29,7 +26,6 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
-
     /**
      * Report or log an exception.
      *
@@ -40,7 +36,6 @@ class Handler extends ExceptionHandler
     {
         parent::report($exception);
     }
-
     /**
      * Render an exception into an HTTP response.
      *
@@ -52,7 +47,6 @@ class Handler extends ExceptionHandler
     {
         return parent::render($request, $exception);
     }
-
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         if ($request->expectsJson()) {
@@ -64,7 +58,6 @@ class Handler extends ExceptionHandler
         if ($request->is('student') || $request->is('student/*')) {
             return redirect()->guest('/login/student');
         }
-
         return redirect()->guest(route('login'));
     }
 }

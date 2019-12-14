@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
-
+@if ($message = Session::get('error'))
+<div class="alert alert-danger">
+    <p>{{ $message }}</p>
+</div>
+@endif
 
 <div class="container">
     <div class="row justify-content-center">

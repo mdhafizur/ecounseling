@@ -106,7 +106,7 @@
                 @endif
             </div>
 
-            <div class="col-md-8 form-group">
+            <div class="col-md-8 form-group" onclick="return confirm('Are you sure about this record?')">
                 {!! Form::submit(trans('Create Record'), ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}
                 @stop

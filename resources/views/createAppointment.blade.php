@@ -6,10 +6,6 @@
 {!! Form::open(['method' => 'POST', 'route' => ['appointments.store']]) !!}
 
 
-
-
-
-
 <div class="row justify-content-center">
     <div class="col-md-8 form-group">
         <div class="col-md-8 form-group">

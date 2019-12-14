@@ -120,18 +120,23 @@ class ProfilesController extends Controller
 
         $user = Auth::user();
 
+        $filename = 'empty';
+        if ($request->hasfile('resume')) {
+            $filename = $request->file('resume')->store('/', 'pdf');
+        }
         $user->name = $request->name;
         $user->email = $request->email;
         $user->contact = $request->contact;
         $user->about = $request->about;
+        $user->resume = $filename;
 
 
 
 
 
-        if ($request->has('password')) {
-            $user->password = bcrypt($request->password);
-        }
+        // if ($request->has('password')) {
+        //     $user->password = bcrypt($request->password);
+        // }
 
         if ($request->hasfile('avatar')) {
             $avatar = $request->file('avatar');
