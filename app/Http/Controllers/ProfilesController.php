@@ -211,4 +211,16 @@ class ProfilesController extends Controller
 
         return back();
     }
+
+    //questionnaire
+    public function updateD(Request $request)
+    {
+        $user = $request->user();
+
+        $user->update($request->only([
+            'quest_result_text'
+        ]));
+
+        return view('student', compact('user'));
+    }
 }

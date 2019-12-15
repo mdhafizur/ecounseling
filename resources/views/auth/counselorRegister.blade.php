@@ -102,7 +102,7 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Upload Resume') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="resume" type="file" class="form-control" name="resume">
+                                    <input id="resume" type="file" class="form-control" name="resume" required>
                                 </div>
                             </div>
 

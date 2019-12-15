@@ -26,6 +26,8 @@ class CreateStudentsTable extends Migration
             $table->integer('contact')->nullable();
             $table->string('about')->nullable();
             $table->string('avatar')->default('default.jpg');
+            $table->string('depression')->nullable();
+            $table->string('anxiety')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

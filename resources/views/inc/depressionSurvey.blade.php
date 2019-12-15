@@ -6,7 +6,7 @@
 
 
 <div id="surveyElement"></div>
-<div id="surveyResult"></div>
+<div id="surveyResult1"></div>
 
 
 
@@ -18,7 +18,7 @@
         "description": "Over the last 2 weeks, how often have you been bothered by any of the following problem?\n\n",
         "completedHtmlOnCondition": [{
             "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}<=4",
-            "html": "<h1>Minimal Depression<h1> <br> You're doing just fine. Take care of yourself little more. Don't Stress"
+            "html": "<h1>Minimal Depression<h1> "
         }, {}, {
             "expression": "({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}<=9 and ({question1}+{question2}+{question3}+{question4}+{question5}+{question6}+{question7}+{question8}+{question9}>=5",
             "html": "<h1>Mild Depression</h1>"
@@ -209,11 +209,25 @@
     };
     window.survey = new Survey.Model(json);
     survey.onComplete.add(function (result) {
-        document.querySelector('#surveyResult').textContent = "Result JSON:\n" + JSON.stringify(result.data,
+        document.querySelector('#surveyResult1').textContent = "Result JSON:\n" + JSON.stringify(result.data,
             null, 3);
     });
     $("#surveyElement").Survey({
-        model: survey
+        model: survey,
+        onComplete: sendDataToServer
     });
+
+    function sendDataToServer(survey) {
+        // var resultAsString = JSON.stringify(survey.data);
+        var quest_result_sum = 3; //take data from survey var
+        var quest_result_text = completedHtmlOnCondition.html; //take data from survey var
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("PATCH", "/student");
+        xmlhttp.setRequestHeader("Content-Type", "application/json");
+        xmlhttp.send(JSON.stringify({
+            quest_result_sum: quest_result_sum,
+            quest_result_text: quest_result_text
+        }));
+    }
 
 </script>

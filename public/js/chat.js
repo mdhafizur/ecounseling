@@ -56484,8 +56484,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         joinConversation: function joinConversation(id) {
             var payload = {
                 'participants': [{
-                    'id': window.participant && window.participant.id,
-                    'type': window.participant && window.participant.type
+                    'id':  window.participant.id,
+                    'type':  window.participant.type
                 }]
             };
 

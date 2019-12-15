@@ -96,7 +96,8 @@
             </div>
             <div class="col-md-8 form-group">
                 {!! Form::label('comments', 'Comments', ['class' => 'control-label']) !!}
-                {!! Form::textarea('comments', old('comments'), ['class' => 'form-control ', 'placeholder' => ''])
+                {!! Form::textarea('comments', old('comments'), ['class' => 'form-control ', 'placeholder' =>
+                '','required'])
                 !!}
                 <p class="help-block"></p>
                 @if($errors->has('comments'))

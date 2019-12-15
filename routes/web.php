@@ -62,6 +62,14 @@ Route::group(['middleware' => 'auth:student'], function () {
     Route::resource('appointments', 'AppointmentsController');
     Route::get('/createAppointment', 'AppointmentsController@create');
     Route::get('/chat', 'ChatController@index')->name('chat');
+    Route::post('pusher/auth', function () {
+        return auth()->user();
+    });
+    Route::match(
+        ['put', ' patch'],
+        'student',
+        'ProfilesController@updateD'
+    );
 });
 
 
@@ -99,9 +107,7 @@ Route::view('/waiting', 'waiting');
 
 Auth::routes();
 
-Route::post('pusher/auth', function () {
-    return auth()->user();
-});
+
 
 
 Route::get('viewRecords/{id}', 'RecordController@index')->name('viewRecords');

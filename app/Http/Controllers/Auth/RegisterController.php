@@ -89,7 +89,11 @@ class RegisterController extends Controller
 
     protected function createStudent(Request $request)
     {
-        $this->validator($request->all())->validate();
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|unique:students|max:255',
+
+        ]);
         student::create([
             'name' => $request['name'],
             'email' => $request['email'],
@@ -111,7 +115,11 @@ class RegisterController extends Controller
 
     protected function createCounselor(Request $request)
     {
-        $this->validator($request->all())->validate();
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|unique:counselors|max:255',
+
+        ]);
 
         $filename = 'empty';
         if ($request->hasfile('resume')) {
