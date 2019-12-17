@@ -134,7 +134,8 @@
                  daysOfWeekDisabled: [0, 6],
                  format: 'YYYY-MM-DD HH:mm:ss',
                  enabledHours: [9, 10, 11, 12, 14, 15, 16, 17, 18],
-                 stepping: 30
+                 stepping: 30,
+                 startDate: new Date()
 
              });
          });

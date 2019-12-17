@@ -30,13 +30,13 @@
         </div>
 
         <div class="item">
-            <img src="files/2.jpg" alt="Chicago">
+            <img src="files/c.png" alt="Chicago">
 
         </div>
 
-        <div class="item">
+        <!-- <div class="item">
             <img src="/files/carlos.jpg" alt="New York">
-        </div>
+        </div> -->
     </div>
 
     <!-- Left and right controls -->
@@ -49,21 +49,48 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<div class="info">
-    <h1 style="text-align: center;">Welcome To PsyCare</h1>
-    <section>
-        <p>PsyCare is a website dedicated as an aid to help bring counselors and student together. <br> A student can
-            sign
-            up and make appointment with avilable counselors </p>
-    </section>
-    <h4 id="bot" align="right">Click The Message Icon Below to use the Chat Bot <br>
-        You can make hassle free appointment using it. </h4>
+
+<div class="container">
+    <div><img src="https://img.icons8.com/dusk/64/000000/test-partial-passed.png">
+        <p> <strong>Fill Out Psychological Assessment Questionnaire :</strong>
+            Student can sign up in our system and do self assessment
+        </p>
+    </div>
+    <div><img src="https://img.icons8.com/dotty/80/000000/appointment-scheduling.png">
+        <p><strong>Make Appointemnt With An Expert Counselor :</strong>
+            We have expert counselors for you. Who are expert in SESSION, CAREER, ONLINE and PSYCHOTHERAPY.
+        </p>
+    </div>
+    <div>
+        <img src="https://img.icons8.com/bubbles/100/000000/people-group-bill--v1.png">
+        <p> <strong>Chat With Your Counselor :</strong>
+            Make Appointment with our counselor and be in touch with them wehnever you want.
+        </p>
+    </div>
 </div>
 <style>
     .item img {
         width: 100%;
         max-height: 50%;
         object-fit: contain;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .container>div {
+        flex: 1;
+        padding: 50px;
+        padding-left: 140px;
+        /*grow*/
+    }
+
+    .container p {
+        max-width: auto;
+        font-size: 15px;
+        line-height: 1.4em;
+        margin: 0 auto auto -15px;
     }
 
 </style>

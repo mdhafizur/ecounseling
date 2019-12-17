@@ -220,7 +220,7 @@
     function sendDataToServer(survey) {
         // var resultAsString = JSON.stringify(survey.data);
         var quest_result_sum = 3; //take data from survey var
-        var quest_result_text = completedHtmlOnCondition.html; //take data from survey var
+        var quest_result_text = JSON.stringify(result.data) //take data from survey var
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("PATCH", "/student");
         xmlhttp.setRequestHeader("Content-Type", "application/json");

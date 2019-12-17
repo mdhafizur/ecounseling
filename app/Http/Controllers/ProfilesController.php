@@ -95,9 +95,9 @@ class ProfilesController extends Controller
         $user->save();
 
 
-        if ($request->has('password')) {
-            $user->password = bcrypt($request->password);
-        }
+        // if ($request->has('password')) {
+        //     $user->password = bcrypt($request->password);
+        // }
         if ($request->hasfile('avatar')) {
             $avatar = $request->file('avatar');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();

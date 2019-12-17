@@ -33,7 +33,8 @@
         About : {{ $appointment->student->about }}
     </li>
     <li class="list-group-item">
-        Date/Time: {{ optional($appointment->date)->format('Y-m-d H:i:s') }}
+        <!-- Date/Time: {{ optional($appointment->date)->format('Y-m-d H:i:s') }} -->
+        Date/Time: {{ \Carbon\Carbon::parse($appointment->date)->format('d-M-y h:m a')}}
     </li>
     <li class="list-group-item">
         <th><a href="{{route('viewRecords', ['id'=>$appointment->student->id])}}">View Records</a></th>
@@ -118,3 +119,50 @@
         </div>
     </div>
 </div>
+
+<!-- <div>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
+
+    <h3>Calendar</h3>
+
+    <div id='calendar'></div>
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
+    <script>
+        $(document).ready(function () {
+            // page is now ready, initialize the calendar...
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+                events: [
+                    @foreach($appointments as $appointment) {
+                        title: '{{ $appointment->student->name}}',
+
+                    },
+                    @endforeach
+                ]
+            })
+        });
+
+    </script>
+
+</div> -->
+<link href='fullcalendar/core/main.css' rel='stylesheet' />
+<link href='fullcalendar/daygrid/main.css' rel='stylesheet' />
+
+<script src='fullcalendar/core/main.js'></script>
+<script src='fullcalendar/daygrid/main.js'></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: ['dayGrid']
+        });
+
+        calendar.render();
+    });
+
+</script>

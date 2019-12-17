@@ -14,11 +14,19 @@ class counselor extends  Authenticatable
     use Messageable;
 
     protected $guard = 'counselor';
-
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
     protected $fillable = [
         'name', 'email', 'password', 'status', 'type', 'resume',
     ];
-
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
     protected $hidden = [
         'password', 'remember_token',
     ];

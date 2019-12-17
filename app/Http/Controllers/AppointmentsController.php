@@ -11,6 +11,8 @@ use Illuminate\Validation\Rule;
 use App\Rules\IsAvailable;
 use Illuminate\Support\Facades\DB;
 
+use App\Services\PayUService\Exception;
+
 
 class AppointmentsController extends Controller
 {
@@ -57,27 +59,34 @@ class AppointmentsController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
-        $appointment = new Appointment;
+        try {
 
-        $request->validate([
-            'student_id' => Rule::unique('appointments', 'student_id'),
-            'counselor_id' => [
-                Rule::exists('counselors', 'id'), // required so the next Rule is invalid only for date
-                new IsAvailable($request->input('date'))
-            ]
-        ], [
-            'student_id.unique' => 'student already has appointment',
-        ]);
-        $appointment->student_id = $user->id;
-        $appointment->counselor_id = $request->counselor_id;
-        $appointment->date = $request->date;
+            $user = Auth::user();
+            $appointment = new Appointment;
 
-        $appointment->comments = $request->comments;
-        $appointment->save();
-        Session::flash('success', 'Appointment Successful');
+            $request->validate([
+                'student_id' => Rule::unique('appointments', 'student_id'),
+                'counselor_id' => [
+                    Rule::exists('counselors', 'id'), // required so the next Rule is invalid only for date
+                    new IsAvailable($request->input('date'))
 
-        return redirect('/createAppointment');
+                ]
+            ], [
+                'student_id.unique' => 'student already has appointment',
+            ]);
+            $appointment->student_id = $user->id;
+            $appointment->counselor_id = $request->counselor_id;
+            $appointment->date = $request->date;
+
+            $appointment->comments = $request->comments;
+            $appointment->save();
+            Session::flash('success', 'Appointment Successful');
+
+            return redirect('/createAppointment');
+        } catch (\Exception $e) {
+
+            return back()->withError('Student Already Has An Appointment');
+        }
     }
 
     /**

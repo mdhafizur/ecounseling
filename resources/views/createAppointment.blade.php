@@ -10,6 +10,9 @@
     </ul>
 </div>
 @endif
+@if (session('error'))
+<div class="alert alert-danger">{{ session('error') }}</div>
+@endif
 <h3 class="page-title" style="text-align: center;">@lang('Make Appointment')</h3>
 {!! Form::open(['method' => 'POST', 'route' => ['appointments.store']]) !!}
 

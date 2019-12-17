@@ -14,11 +14,19 @@ class student extends  Authenticatable
     use Messageable;
 
     protected $guard = 'student';
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'name', 'email', 'password', 'matric', 'faculty', 'department', 'year', 'nationality', 'contact',
     ];
-
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
     protected $hidden = [
         'password', 'remember_token',
     ];
