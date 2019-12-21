@@ -32,178 +32,178 @@
         "pages": [{
             "name": "page1",
             "elements": [{
-                    "type": "rating",
-                    "name": "question1",
-                    "title": "Little interest or pleasure in doing things",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
-                },
-                {
-                    "type": "rating",
-                    "name": "question2",
-                    "title": "Feeling down, depressed or hopeless",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
+                "type": "rating",
+                "name": "question1",
+                "title": "Little interest or pleasure in doing things",
+                "isRequired": true,
+                "rateValues": [{
+                    "value": "0",
+                    "text": "Not at all"
                 }, {
-                    "type": "rating",
-                    "name": "question3",
-                    "title": "Trouble falling or staying asleep or sleeping too much",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
+                    "value": "1",
+                    "text": "Several Days"
                 }, {
-                    "type": "rating",
-                    "name": "question4",
-                    "title": "Feeling tired or having little energy",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
+                    "value": "2",
+                    "text": "More than half the days"
                 }, {
-                    "type": "rating",
-                    "name": "question5",
-                    "title": "Poor appetite or overeating",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
+                    "value": "3",
+                    "text": "Nearly every day"
+                }],
+                "rateMax": 3
+            },
+            {
+                "type": "rating",
+                "name": "question2",
+                "title": "Feeling down, depressed or hopeless",
+                "isRequired": true,
+                "rateValues": [{
+                    "value": "0",
+                    "text": "Not at all"
                 }, {
-                    "type": "rating",
-                    "name": "question6",
-                    "title": "Feeling bad about yourself or that you are a failure or have let yourself or your family down",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
+                    "value": "1",
+                    "text": "Several Days"
                 }, {
-                    "type": "rating",
-                    "name": "question7",
-                    "title": "Trouble concentrating on things, such as reading the newspaper or watching the television",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
+                    "value": "2",
+                    "text": "More than half the days"
                 }, {
-                    "type": "rating",
-                    "name": "question8",
-                    "title": "Moving or speaking so slowly that other people could have noticed?  Or the opposite - being so fidgery or restless that you have been moving around a lot more than usual",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
+                    "value": "3",
+                    "text": "Nearly every day"
+                }],
+                "rateMax": 3
+            }, {
+                "type": "rating",
+                "name": "question3",
+                "title": "Trouble falling or staying asleep or sleeping too much",
+                "isRequired": true,
+                "rateValues": [{
+                    "value": "0",
+                    "text": "Not at all"
                 }, {
-                    "type": "rating",
-                    "name": "question9",
-                    "title": "Thoughts that you would be better off dead of or hurting yourself in some way",
-                    "isRequired": true,
-                    "rateValues": [{
-                        "value": "0",
-                        "text": "Not at all"
-                    }, {
-                        "value": "1",
-                        "text": "Several Days"
-                    }, {
-                        "value": "2",
-                        "text": "More than half the days"
-                    }, {
-                        "value": "3",
-                        "text": "Nearly every day"
-                    }],
-                    "rateMax": 3
-                }
+                    "value": "1",
+                    "text": "Several Days"
+                }, {
+                    "value": "2",
+                    "text": "More than half the days"
+                }, {
+                    "value": "3",
+                    "text": "Nearly every day"
+                }],
+                "rateMax": 3
+            }, {
+                "type": "rating",
+                "name": "question4",
+                "title": "Feeling tired or having little energy",
+                "isRequired": true,
+                "rateValues": [{
+                    "value": "0",
+                    "text": "Not at all"
+                }, {
+                    "value": "1",
+                    "text": "Several Days"
+                }, {
+                    "value": "2",
+                    "text": "More than half the days"
+                }, {
+                    "value": "3",
+                    "text": "Nearly every day"
+                }],
+                "rateMax": 3
+            }, {
+                "type": "rating",
+                "name": "question5",
+                "title": "Poor appetite or overeating",
+                "isRequired": true,
+                "rateValues": [{
+                    "value": "0",
+                    "text": "Not at all"
+                }, {
+                    "value": "1",
+                    "text": "Several Days"
+                }, {
+                    "value": "2",
+                    "text": "More than half the days"
+                }, {
+                    "value": "3",
+                    "text": "Nearly every day"
+                }],
+                "rateMax": 3
+            }, {
+                "type": "rating",
+                "name": "question6",
+                "title": "Feeling bad about yourself or that you are a failure or have let yourself or your family down",
+                "isRequired": true,
+                "rateValues": [{
+                    "value": "0",
+                    "text": "Not at all"
+                }, {
+                    "value": "1",
+                    "text": "Several Days"
+                }, {
+                    "value": "2",
+                    "text": "More than half the days"
+                }, {
+                    "value": "3",
+                    "text": "Nearly every day"
+                }],
+                "rateMax": 3
+            }, {
+                "type": "rating",
+                "name": "question7",
+                "title": "Trouble concentrating on things, such as reading the newspaper or watching the television",
+                "isRequired": true,
+                "rateValues": [{
+                    "value": "0",
+                    "text": "Not at all"
+                }, {
+                    "value": "1",
+                    "text": "Several Days"
+                }, {
+                    "value": "2",
+                    "text": "More than half the days"
+                }, {
+                    "value": "3",
+                    "text": "Nearly every day"
+                }],
+                "rateMax": 3
+            }, {
+                "type": "rating",
+                "name": "question8",
+                "title": "Moving or speaking so slowly that other people could have noticed?  Or the opposite - being so fidgery or restless that you have been moving around a lot more than usual",
+                "isRequired": true,
+                "rateValues": [{
+                    "value": "0",
+                    "text": "Not at all"
+                }, {
+                    "value": "1",
+                    "text": "Several Days"
+                }, {
+                    "value": "2",
+                    "text": "More than half the days"
+                }, {
+                    "value": "3",
+                    "text": "Nearly every day"
+                }],
+                "rateMax": 3
+            }, {
+                "type": "rating",
+                "name": "question9",
+                "title": "Thoughts that you would be better off dead of or hurting yourself in some way",
+                "isRequired": true,
+                "rateValues": [{
+                    "value": "0",
+                    "text": "Not at all"
+                }, {
+                    "value": "1",
+                    "text": "Several Days"
+                }, {
+                    "value": "2",
+                    "text": "More than half the days"
+                }, {
+                    "value": "3",
+                    "text": "Nearly every day"
+                }],
+                "rateMax": 3
+            }
             ]
         }]
     };

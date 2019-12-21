@@ -17,7 +17,7 @@
 {!! Form::open(['method' => 'POST', 'route' => ['appointments.store']]) !!}
 
 
-<div class="row justify-content-center">
+<div class="row justify-content-left">
     <div class="col-md-8 form-group">
         <div class="col-md-8 form-group">
             {!! Form::label('counselor_id', 'Counselor*', ['class' => 'control-label']) !!}
@@ -80,7 +80,7 @@
     </div>
 
 </div>
-<div class="form-group" style=" position:absolute; top: 200px; right: 50px;">
+<div class="col-md-4 form-group" style=" position:absolute; top: 200px; right: 50px;">
     <h3 class="page-title" style="text-align: center;">@lang('Your Appointments')</h3>
     @forelse ($counselorS as $counselorS)
 

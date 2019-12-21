@@ -11,6 +11,7 @@
         Profile</button>
     <button type=" button" onclick="location.href = '/appointedStudents';" class="btn btn-info">Appointed
         Students</button>
+    <button type=" button" onclick="location.href = '/chat';" class="btn btn-info">Chat</button>
 
 </div>
 @endsection

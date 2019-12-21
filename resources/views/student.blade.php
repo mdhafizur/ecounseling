@@ -39,7 +39,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                @include('inc.anxietySurvey')
+                <!-- @include('inc.anxietySurvey') -->
             </div>
             {{-- <div class="modal-footer" >
         <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
@@ -69,7 +69,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                @include('inc.depressionSurvey')
+                <!-- @include('inc.depressionSurvey') -->
             </div>
             {{-- <div class="modal-footer" >
         <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>

@@ -90,6 +90,10 @@ Route::group(['middleware' => 'auth:counselor'], function () {
 
     Route::resource('records', 'RecordController');
     Route::view('/record', 'record');
+    Route::get('/chat', 'ChatController@index')->name('chat');
+    Route::post('pusher/auth', function () {
+        return auth()->user();
+    });
 });
 Route::get('/viewCprofile', 'ProfilesController@getCprofiles');
 
