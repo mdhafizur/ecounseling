@@ -10,7 +10,7 @@
     <button type=" button" onclick="location.href = '{{route('student.profile')}}';" class="btn btn-info">View & Update
         Profile</button>
     <button type=" button" onclick="location.href = '/viewCprofile';" class="btn btn-info">Available Counselors</button>
-    <button type=" button" onclick="location.href = '/chat';" class="btn btn-info">Chat</button>
+    <button type=" button" onclick="location.href = '/student/chat';" class="btn btn-info">Chat</button>
 </div>
 <br>
 <br>

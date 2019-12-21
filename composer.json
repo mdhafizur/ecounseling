@@ -18,7 +18,7 @@
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^6.0",
         "musonza/chat": "^4.2",
-        "pusher/pusher-php-server": "~4.0"
+        "pusher/pusher-php-server": "^4.1"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

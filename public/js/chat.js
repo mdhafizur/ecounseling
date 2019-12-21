@@ -32891,16 +32891,16 @@ module.exports = function(module) {
       }; // Private
 
 
-      _proto._addEventListeners = function _addEventListeners() {
-        var _this = this;
+    //   _proto._addEventListeners = function _addEventListeners() {
+    //     var _this = this;
 
-        $$$1(this._element).on(Event.CLICK, function (event) {
-          event.preventDefault();
-          event.stopPropagation();
+    //     $$$1(this._element).on(Event.CLICK, function (event) {
+    //       event.preventDefault();
+    //       event.stopPropagation();
 
-          _this.toggle();
-        });
-      };
+    //       _this.toggle();
+    //     });
+    //   };
 
       _proto._getConfig = function _getConfig(config) {
         config = _objectSpread({}, this.constructor.Default, $$$1(this._element).data(), config);

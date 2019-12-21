@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Musonza\Chat\Traits\Messageable;
 
-class counselor extends  Authenticatable
+class Counselor extends  Authenticatable
 {
     use Notifiable;
     use Messageable;

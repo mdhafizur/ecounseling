@@ -61,7 +61,7 @@ Route::group(['middleware' => 'auth:student'], function () {
     Route::post('student/profile/update', ['uses' => 'ProfilesController@updateStudent', 'as' => 'student.profile.update']);
     Route::resource('appointments', 'AppointmentsController');
     Route::get('/createAppointment', 'AppointmentsController@create');
-    Route::get('/chat', 'ChatController@index')->name('chat');
+    Route::get('/student/chat', 'ChatController@index')->name('chat');
     Route::post('pusher/auth', function () {
         return auth()->user();
     });
@@ -90,7 +90,7 @@ Route::group(['middleware' => 'auth:counselor'], function () {
 
     Route::resource('records', 'RecordController');
     Route::view('/record', 'record');
-    Route::get('/chat', 'ChatController@index')->name('chat');
+    Route::get('/counselor/chat', 'ChatController@index')->name('chat');
     Route::post('pusher/auth', function () {
         return auth()->user();
     });
