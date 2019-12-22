@@ -7,9 +7,11 @@
                 {{csrf_field()}}
                 <legend>Rate Counselor</legend>
                 <div class="form-group">
-                    <lable for="">Rating</lable>
-                    <star-rating><input type="text" class="form-control" name="rating" id="" placeholder="Input...">
+                    <star-rating>
                     </star-rating>
+
+                    <lable for="">Rating</lable>
+                    <input type="text" class="form-control" name="rating" id="" placeholder="Input...">
 
 
 
@@ -26,8 +28,8 @@
 
 
         </div>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
+        <!-- <button class="close-button" data-close aria-label="Close modal" type="button">
             <span aria-hidden="true"></span>
-        </button>
+        </button> -->
     </div>
 </div>
