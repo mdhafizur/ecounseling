@@ -30,4 +30,17 @@ class Counselor extends  Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // public function reviews()
+    // {
+    //     return $this->hasMany(CounselorReview::class);
+    // }
+    // public function getStarRating()
+    // {
+
+    //     $starCountSum = $this->reviews()->sum('rating');
+    //     $average = $starCountSum / $this->reviews()->count();
+
+    //     return $average;
+    // }
 }

@@ -5,7 +5,7 @@
 @php
 $conversationId = Request::query('conversation_id');
 @endphp
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="{{ asset('js/chat.js') }}" defer></script>
 <div id="app" class="container">
     <div class="row justify-content-center">

@@ -31,6 +31,7 @@
         "pusher-js": "^5.0.3",
         "tempusdominus-bootstrap-4": "^5.1.2",
         "vue": "^2.6.11",
+        "vue-star-rating": "^1.6.1",
         "vue-webcam": "^2.0.4"
     }
 }

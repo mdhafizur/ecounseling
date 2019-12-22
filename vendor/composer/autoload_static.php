@@ -545,6 +545,7 @@ class ComposerStaticInit3697ca7aa6cc23329f88db8dffb8e4df
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Conversations\\ExampleConversation' => __DIR__ . '/../..' . '/app/Http/Conversations/ExampleConversation.php',
         'App\\Counselor' => __DIR__ . '/../..' . '/app/Counselor.php',
+        'App\\CounselorReview' => __DIR__ . '/../..' . '/app/CounselorReview.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AppointmentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/AppointmentsController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',

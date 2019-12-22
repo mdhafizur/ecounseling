@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Auth;
 use Session;
 use Image;
+use Illuminate\Support\Facades\DB;
 
 class ProfilesController extends Controller
 {
@@ -165,10 +166,25 @@ class ProfilesController extends Controller
         //
     }
     //view messages
-    public function getCprofiles()
+    public function getCprofiles(Counselor $counselor)
     {
-        $cprofiles = counselor::all();
-        return view('viewCprofile')->with('viewCprofile', $cprofiles);
+
+
+        $user = Auth::user();
+        $relations = [
+            'viewCprofile' => counselor::all(),
+            'reviews' => DB::table('counselor_reviews')
+                ->select('*')
+
+
+                ->get()
+
+        ];
+
+
+
+
+        return view('viewCprofile', $relations);
     }
 
 

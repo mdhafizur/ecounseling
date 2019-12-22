@@ -30,4 +30,9 @@ class Student extends  Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function review()
+    {
+        return $this->hasOne(CounselorReview::class);
+    }
 }

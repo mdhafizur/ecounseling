@@ -70,6 +70,8 @@ Route::group(['middleware' => 'auth:student'], function () {
         'student',
         'ProfilesController@updateD'
     );
+    Route::resource('review', 'CounselorReviewController');
+    Route::get('/viewCprofile', 'ProfilesController@getCprofiles');
 });
 
 
@@ -95,7 +97,7 @@ Route::group(['middleware' => 'auth:counselor'], function () {
         return auth()->user();
     });
 });
-Route::get('/viewCprofile', 'ProfilesController@getCprofiles');
+
 
 Route::get('/approval', 'ProfilesController@index');
 Route::get('status/{id}', 'ProfilesController@status')->name('status');

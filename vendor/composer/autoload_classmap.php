@@ -10,6 +10,7 @@ return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Conversations\\ExampleConversation' => $baseDir . '/app/Http/Conversations/ExampleConversation.php',
     'App\\Counselor' => $baseDir . '/app/Counselor.php',
+    'App\\CounselorReview' => $baseDir . '/app/CounselorReview.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AppointmentsController' => $baseDir . '/app/Http/Controllers/AppointmentsController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
