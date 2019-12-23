@@ -16,9 +16,24 @@ class CounselorReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $relations = [
+            'reviews' => DB::table('counselor_reviews')
+                ->select('*')
+
+                ->where('counselor_id', '=', $id)
+                ->get(),
+
+            'avgRating' => DB::table('counselor_reviews')
+
+
+                ->where('counselor_id', '=', $id)
+                ->avg('rating')
+
+
+        ];
+        return view('inc/viewReviews', $relations);
     }
 
     /**
@@ -44,7 +59,7 @@ class CounselorReviewController extends Controller
 
         $review->user_id = $user->id;
         $review->counselor_id = $request->counselor_id;
-        $review->rating = $request->rating;
+        $review->rating = $request->rate;
         $review->review = $request->review;
         $review->save();
 

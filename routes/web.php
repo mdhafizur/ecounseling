@@ -117,3 +117,5 @@ Auth::routes();
 
 
 Route::get('viewRecords/{id}', 'RecordController@index')->name('viewRecords');
+
+Route::get('inc/viewReviews/{id}', 'CounselorReviewController@index')->name('viewReviews');

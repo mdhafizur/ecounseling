@@ -25,7 +25,7 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 
 
 
-Vue.component('review-form', require('./components/ReviewForm.vue'));
+// Vue.component('review-form', require('./components/ReviewForm.vue'));
 Vue.component('star-rating', StarRating);
 
 const app = new Vue({
