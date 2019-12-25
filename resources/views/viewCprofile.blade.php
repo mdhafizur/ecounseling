@@ -23,10 +23,7 @@
             <li class="list-group-item">Counselor Type: {{$cprofile->type}}</li>
             <li class="list-group-item">Contact No: {{$cprofile->contact}}</li>
             <li class="list-group-item">About: {{$cprofile->about}}</li>
-            <!-- <li class="list-group-item">
-                <th><a href="{{route('viewReviews', ['id'=>$cprofile->id])}}">View Reviews</a></th>
-                <th>
-            </li> -->
+
             @if (count($reviews)>0)
             @php $total_ratings = 0 @endphp
             @php $number_ratings = 0 @endphp
@@ -37,12 +34,6 @@
             @if( $review->counselor_id == $cprofile->id)
             @php $total_ratings += $review->rating @endphp
             @php $number_ratings++ @endphp
-            <!-- <li>{{$review->review}} {{$review->rating}}</li> -->
-
-
-
-            <!-- <star-rating :rating="{{$review->rating}}">
-                                </star-rating> -->
 
             @endif
 
@@ -51,10 +42,7 @@
             @empty
 
             @endforelse
-
-            @endif
-
-            @if($total_ratings != 0)
+            @if( $total_ratings != 0)
             @php $avg = ($total_ratings/$number_ratings) @endphp
 
             @else
@@ -78,6 +66,9 @@
                 </p>
 
             </li>
+            @endif
+
+
 
 
 
@@ -168,9 +159,6 @@
                             @empty
 
                             @endforelse
-
-                            @endif
-
                             @if($total_ratings != 0)
                             @php $avg = ($total_ratings/$number_ratings) @endphp
                             Average Rating : {{$avg}}
@@ -178,6 +166,10 @@
                             @php $avg = 0 @endphp
 
                             @endif
+
+                            @endif
+
+
 
                         </div>
                     </div>
@@ -200,24 +192,6 @@
 
 
 
-        <!-- <div class="item-wrapper" style="text-align:justify; top: 100px;">
-            <legend>Reviews</legend>
-            @if (count($reviews)>0)
-            @forelse($reviews as $review)
-
-            <li>
-                @if( $review->counselor_id == $cprofile->id)
-                {{$review->review}}
-                {{$review->rating}}
-                <star-rating :rating="{{$review->rating}}">
-                </star-rating>
-                @endif
-            </li>
-            @empty
-
-            @endforelse
-            @endif
-        </div> -->
 
     </ul>
 </div>

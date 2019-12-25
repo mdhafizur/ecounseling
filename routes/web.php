@@ -72,6 +72,10 @@ Route::group(['middleware' => 'auth:student'], function () {
     );
     Route::resource('review', 'CounselorReviewController');
     Route::get('/viewCprofile', 'ProfilesController@getCprofiles');
+
+    Route::get('viewRecords/{id}', 'RecordController@index')->name('viewRecords');
+
+    Route::get('inc/viewReviews/{id}', 'CounselorReviewController@index')->name('viewReviews');
 });
 
 
@@ -112,10 +116,3 @@ Route::view('/waiting', 'waiting');
 
 
 Auth::routes();
-
-
-
-
-Route::get('viewRecords/{id}', 'RecordController@index')->name('viewRecords');
-
-Route::get('inc/viewReviews/{id}', 'CounselorReviewController@index')->name('viewReviews');
