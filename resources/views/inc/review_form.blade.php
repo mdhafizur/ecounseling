@@ -2,7 +2,7 @@
 
     <div class="reveal" id="counsleor-review-modal" data-reveal>
 
-        <div id="app">
+        <div>
             <!-- <div>
                 <review-form>
                     :counselor="{{$cprofile}}"
@@ -34,7 +34,7 @@
 
 
                     <lable for="">Rating</lable>
-                    <!-- <input type="text" class="form-control" name="rating" id="" placeholder="Input..."> -->
+                    <input type="text" class="form-control" name="rating" id="" placeholder="Input...">
 
 
 

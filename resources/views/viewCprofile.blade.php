@@ -4,6 +4,8 @@
 @if (count($viewCprofile)>0)
 @forelse ($viewCprofile as $cprofile)
 <script src="{{ asset('js/app.js') }}" defer></script>
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
+
 <div id="app">
     <ul class="list-group">
         <br>
@@ -21,10 +23,63 @@
             <li class="list-group-item">Counselor Type: {{$cprofile->type}}</li>
             <li class="list-group-item">Contact No: {{$cprofile->contact}}</li>
             <li class="list-group-item">About: {{$cprofile->about}}</li>
-            <li class="list-group-item">
+            <!-- <li class="list-group-item">
                 <th><a href="{{route('viewReviews', ['id'=>$cprofile->id])}}">View Reviews</a></th>
                 <th>
+            </li> -->
+            @if (count($reviews)>0)
+            @php $total_ratings = 0 @endphp
+            @php $number_ratings = 0 @endphp
+            @forelse($reviews as $review)
+
+
+
+            @if( $review->counselor_id == $cprofile->id)
+            @php $total_ratings += $review->rating @endphp
+            @php $number_ratings++ @endphp
+            <!-- <li>{{$review->review}} {{$review->rating}}</li> -->
+
+
+
+            <!-- <star-rating :rating="{{$review->rating}}">
+                                </star-rating> -->
+
+            @endif
+
+
+
+            @empty
+
+            @endforelse
+
+            @endif
+
+            @if($total_ratings != 0)
+            @php $avg = ($total_ratings/$number_ratings) @endphp
+
+            @else
+            @php $avg = 0 @endphp
+
+            @endif
+            <li class="list-group-item">
+                <h5 class="rating-num">Average Rating : {{$avg}}</h5>
+                <p>
+
+                    @while($avg>0)
+                    @if($avg >0.5)
+                    <i class="fa fa-star"></i>
+                    @else
+                    <i class="fa fa-star-half"></i>
+                    @endif
+                    @php $avg--; @endphp
+                    @endwhile
+
+
+                </p>
+
             </li>
+
+
 
             <!-- Button trigger write review modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal"
@@ -84,17 +139,27 @@
                         <div class="item-wrapper" style="text-align:justify; top: 100px;">
                             <legend>Reviews</legend>
                             @if (count($reviews)>0)
+                            @php $total_ratings = 0 @endphp
+                            @php $number_ratings = 0 @endphp
                             @forelse($reviews as $review)
 
 
 
                             @if( $review->counselor_id == $cprofile->id)
+                            @php $total_ratings += $review->rating @endphp
+                            @php $number_ratings++ @endphp
+                            <li>{{$review->review}} </li>
 
-                            {{$review->review}}
-                            {{$review->rating}}
 
-                            <star-rating :rating="{{$review->rating}}">
-                            </star-rating>
+                            @while($review->rating>0)
+                            @if($review->rating >0.5)
+                            <i class="fa fa-star"></i>
+                            @else
+                            <i class="fa fa-star-half"></i>
+                            @endif
+                            @php $review->rating--; @endphp
+                            @endwhile
+
 
                             @endif
 
@@ -103,6 +168,14 @@
                             @empty
 
                             @endforelse
+
+                            @endif
+
+                            @if($total_ratings != 0)
+                            @php $avg = ($total_ratings/$number_ratings) @endphp
+                            Average Rating : {{$avg}}
+                            @else
+                            @php $avg = 0 @endphp
 
                             @endif
 

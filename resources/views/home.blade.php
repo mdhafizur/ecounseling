@@ -26,6 +26,9 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" style="height: 100%">
         <div class="item active">
+            <img src="/files/1.png" alt="New York">
+        </div>
+        <div class="item ">
             <img src="files/exhibition.jpg" alt="Los Angeles">
         </div>
 
@@ -34,9 +37,7 @@
 
         </div>
 
-        <!-- <div class="item">
-            <img src="/files/carlos.jpg" alt="New York">
-        </div> -->
+
     </div>
 
     <!-- Left and right controls -->
@@ -92,6 +93,5 @@
         line-height: 1.4em;
         margin: 0 auto auto -15px;
     }
-
 </style>
 @endsection

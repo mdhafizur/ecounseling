@@ -27,6 +27,7 @@
         "@vue/cli": "^4.1.1",
         "ajax": "0.0.4",
         "bootstrap": "^4.4.1",
+        "font-awesome": "^4.7.0",
         "laravel-echo": "^1.6.1",
         "popper.js": "^1.16.0",
         "pusher-js": "^5.0.3",

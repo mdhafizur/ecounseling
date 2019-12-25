@@ -1,6 +1,6 @@
 <h1>Reviews</h1>
 @foreach($reviews as $review)
-<div id="app">
+<div>
     <!-- <li class="list-group-item">
         <star-rating :rating="{{$review->rating}}">
         </star-rating>
