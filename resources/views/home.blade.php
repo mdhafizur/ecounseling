@@ -29,15 +29,13 @@
             <img src="/files/1.png" alt="New York">
         </div>
         <div class="item ">
-            <img src="files/exhibition.jpg" alt="Los Angeles">
+            <img src="files/2.png" alt="Los Angeles">
         </div>
 
         <div class="item">
             <img src="files/c.png" alt="Chicago">
 
         </div>
-
-
     </div>
 
     <!-- Left and right controls -->
@@ -50,8 +48,8 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
-<div class="container">
+<br>
+<!-- <div class="container">
     <div><img src="https://img.icons8.com/dusk/64/000000/test-partial-passed.png">
         <p> <strong>Fill Out Psychological Assessment Questionnaire :</strong>
             Student can sign up in our system and do self assessment
@@ -68,8 +66,80 @@
             Make Appointment with our counselor and be in touch with them wehnever you want.
         </p>
     </div>
+</div> -->
+
+
+<div class="card-deck mb-3 text-center" style="background-color: black;  ">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Psychological Assessment Questionnaire</h4>
+        </div>
+        <div class="card-body">
+            <img src="https://img.icons8.com/dusk/64/000000/test-partial-passed.png">
+            <ul class="list-unstyled mt-3 mb-4">
+                <li>Student can sign up in our system and do self assessment</li>
+                <li>Make Appointemnt</li>
+                <li>Counselor Details</li>
+
+            </ul>
+
+        </div>
+    </div>
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Make Appointemnt With An Expert Counselor</h4>
+        </div>
+        <div class="card-body">
+            <img src="https://img.icons8.com/dotty/80/000000/appointment-scheduling.png">
+            <ul class="list-unstyled mt-3 mb-4">
+                <li>Expert Counseling</li>
+                <li>Counseling Provided:SESSION, CAREER, ONLINE and PSYCHOTHERAPY</li>
+
+
+            </ul>
+
+        </div>
+    </div>
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Chat With Your Counselor</h4>
+        </div>
+        <div class="card-body">
+            <img src="https://img.icons8.com/bubbles/100/000000/people-group-bill--v1.png">
+            <ul class="list-unstyled mt-3 mb-4">
+                <li>Chat With Your Counselor</li>
+                <li>Online Counseling</li>
+                <li>Make hassle-free appointment with ChatBot</li>
+
+            </ul>
+
+        </div>
+    </div>
 </div>
+
+
+
+
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+        <small style="padding-left: 500px;"">Copyright &copy; Hafizur</small>
+    </div>
+</footer>
+
+
+
+
+
 <style>
+    .mb-3,
+    .my-3 {
+        margin-bottom: 0rem !important;
+    }
+
+    li {
+        padding: 10px;
+    }
+
     .item img {
         width: 100%;
         max-height: 50%;
@@ -92,6 +162,12 @@
         font-size: 15px;
         line-height: 1.4em;
         margin: 0 auto auto -15px;
+    }
+
+
+    .card-body {
+        background-color: cornsilk;
+        height: 300px;
     }
 </style>
 @endsection

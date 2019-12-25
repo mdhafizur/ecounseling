@@ -17,7 +17,7 @@
                 <div class="form-group">
                     <!-- <star-rating></star-rating> -->
 
-                    <div class="rate">
+                    <div class="rate" required>
                         <input type="radio" id="star5" name="rate" value="5" />
                         <label for="star5" title="text">5 stars</label>
                         <input type="radio" id="star4" name="rate" value="4" />
@@ -32,16 +32,17 @@
 
 
 
-
+                    <!--
                     <lable for="">Rating</lable>
-                    <input type="text" class="form-control" name="rating" id="" placeholder="Input...">
+                    <input type="text" class="form-control" name="rating" id="" placeholder="Input..."> -->
 
 
 
                 </div>
                 <div class="form-group">
                     <lable for="">Review</lable>
-                    <input type="text" class="form-control" name="review" id="" placeholder="Write Your Review">
+                    <input type="text" class="form-control" name="review" id="" placeholder="Write Your Review"
+                        required>
                 </div>
 
                 <input type="hidden" name="counselor_id" value="{{$cprofile->id}}">

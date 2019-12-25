@@ -161,7 +161,7 @@
                             @endforelse
                             @if($total_ratings != 0)
                             @php $avg = ($total_ratings/$number_ratings) @endphp
-                            Average Rating : {{$avg}}
+                            <!-- Average Rating : {{$avg}} -->
                             @else
                             @php $avg = 0 @endphp
 

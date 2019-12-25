@@ -45,6 +45,22 @@ Route::post('/login/admin', 'Auth\LoginController@adminLogin');
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::view('/admin', 'admin');
     Route::get('/messages', 'MessagesController@getMessages');
+    Route::get('/viewCprofile', 'ProfilesController@getCprofiles');
+
+
+
+
+
+
+    Route::get('/approval', 'ProfilesController@index');
+    Route::get('status/{id}', 'ProfilesController@status')->name('status');
+    Route::get('pdf/{id}', 'ProfilesController@pdf')->name('pdf');
+
+
+    Route::delete('/approval/{counselor}', 'ProfilesController@approvalDestroy');
+
+    Route::get('/botAppointment', 'AppointmentsController@getbotAppointments');
+    Route::delete('/botAppointment/{appointment}', 'AppointmentsController@destroybotAppointments');
 });
 
 
@@ -73,7 +89,7 @@ Route::group(['middleware' => 'auth:student'], function () {
     Route::resource('review', 'CounselorReviewController');
     Route::get('/viewCprofile', 'ProfilesController@getCprofiles');
 
-    Route::get('viewRecords/{id}', 'RecordController@index')->name('viewRecords');
+
 
     Route::get('inc/viewReviews/{id}', 'CounselorReviewController@index')->name('viewReviews');
 });
@@ -100,18 +116,11 @@ Route::group(['middleware' => 'auth:counselor'], function () {
     Route::post('pusher/auth', function () {
         return auth()->user();
     });
+    Route::get('viewRecords/{id}', 'RecordController@index')->name('viewRecords');
 });
 
 
-Route::get('/approval', 'ProfilesController@index');
-Route::get('status/{id}', 'ProfilesController@status')->name('status');
-Route::get('pdf/{id}', 'ProfilesController@pdf')->name('pdf');
 
-
-Route::delete('/approval/{counselor}', 'ProfilesController@approvalDestroy');
-
-Route::get('/botAppointment', 'AppointmentsController@getbotAppointments');
-Route::delete('/botAppointment/{appointment}', 'AppointmentsController@destroybotAppointments');
 Route::view('/waiting', 'waiting');
 
 

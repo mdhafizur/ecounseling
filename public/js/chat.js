@@ -56707,7 +56707,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 participant_type: window.participant.type
             }).then(function () {
                 _this.newMessage = "";
-                location.reload(); // comment this out if you are broadcasting
+                // location.reload(); // comment this out if you are broadcasting
             });
         }
     }
@@ -56897,8 +56897,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     enablePusher: function enablePusher() {
       var _this3 = this;
 
-      var pusher = new Pusher("", {
-        cluster: "mt1"
+        var pusher = new Pusher("9eb62a3a7dc48cd67fa8", {
+        cluster: "ap1"
       });
 
       var channel = pusher.subscribe("mc-chat-conversation." + this.conversation);
@@ -56910,7 +56910,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   created: function created() {
     this.fetchMessages();
-    //this.enablePusher();
+    this.enablePusher();
   }
 });
 

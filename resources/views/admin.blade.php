@@ -10,7 +10,7 @@
 
                 <div class="card-body">
                     Hi boss!
-                    <a href="/messages">Messages</a>
+
                     <button type="button" onclick="location.href = '/messages';" class="btn btn-info">
                         Messages</button>
 
