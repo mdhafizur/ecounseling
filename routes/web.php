@@ -49,9 +49,6 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
 
 
-
-
-
     Route::get('/approval', 'ProfilesController@index');
     Route::get('status/{id}', 'ProfilesController@status')->name('status');
     Route::get('pdf/{id}', 'ProfilesController@pdf')->name('pdf');
@@ -70,6 +67,10 @@ Route::post('/register/student', 'Auth\RegisterController@createStudent');
 
 Route::get('/login/student', 'Auth\LoginController@showStudentLoginForm')->name('login.student');
 Route::post('/login/student', 'Auth\LoginController@studentLogin');
+
+
+
+
 
 Route::group(['middleware' => 'auth:student'], function () {
     Route::view('/student', 'student');
